@@ -1,41 +1,54 @@
 import React from "react";
 import "./Wrapper.css";
 import Test1 from "../Test1/";
+import _ from "lodash";
 const Wrapper = () => {
   const [position, setPosition] = React.useState(0);
+  // const [y, setY] = React.useState(window.scrollY);
+
   const length = 4;
   const wrapperEls = React.useRef([]);
-  let lastScrollTop = 0;
-  React.useEffect(() => {
-    const handleScroll = (event) => {
+  const updatePosition = _.debounce((val) => {
+    setPosition(val);
+    console.log(position);
+  }, 300);
+  // const updateY = _.debounce((val) => {
+  //   setY(val);
+  // }, 200);
+  const updateHello = _.debounce((val) => {
+    console.log(val);
+  }, 200);
+  const handleNavigation = React.useCallback(
+    (e) => {
       let newPosition;
-      if (event.deltaY < 0) {
+      if (e.deltaY < 0) {
         if (position > 0) {
           newPosition = position - 1;
         } else {
           newPosition = 0;
         }
-        setPosition(newPosition);
-      } else if (event.deltaY > 0) {
+      } else if (e.deltaY > 0) {
         if (position < length - 1) {
           newPosition = position + 1;
         } else {
           newPosition = position;
         }
-        setPosition(newPosition);
       }
-    };
-    window.addEventListener("wheel", handleScroll);
+      updatePosition(newPosition);
+    },
+    [updatePosition, position]
+  );
+  React.useEffect(() => {
+    window.addEventListener("wheel", handleNavigation);
     return () => {
-      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("wheel", handleNavigation);
     };
-  }, [position]);
+  }, [handleNavigation]);
   React.useEffect(() => {
     wrapperEls.current[position].scrollIntoView({
       behavior: "smooth",
     });
   }, [position]);
-  console.log(position);
   return (
     <React.Fragment>
       <div className="wrapper">
