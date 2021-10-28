@@ -6,7 +6,7 @@ const Test1 = React.forwardRef((props, ref) => {
 
   return (
     <React.Fragment>
-      <div className="Test1" ref={ref}>
+      <div className="Test1" ref={ref} id={id}>
         {id}
       </div>
     </React.Fragment>

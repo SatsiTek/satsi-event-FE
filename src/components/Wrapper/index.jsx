@@ -1,23 +1,25 @@
 import React from "react";
-import "./Wrapper.css";
 import Test1 from "../Test1/";
+import Sidebar from "../Sidebar";
+import "./Wrapper.css";
 import _ from "lodash";
+
+const eventArray = [
+  { href: "hihi", icon: <ion-icon name="logo-angular"></ion-icon> },
+  { href: "hiha", icon: <ion-icon name="logo-css3"></ion-icon> },
+  { href: "hiho", icon: <ion-icon name="logo-octocat"></ion-icon> },
+  { href: "hihafaf", icon: <ion-icon name="logo-github"></ion-icon> },
+  { href: "concacon", icon: <ion-icon name="logo-javascript"></ion-icon> },
+];
+
 const Wrapper = () => {
   const [position, setPosition] = React.useState(0);
-  // const [y, setY] = React.useState(window.scrollY);
-
-  const length = 4;
+  const length = 5;
   const wrapperEls = React.useRef([]);
   const updatePosition = _.debounce((val) => {
     setPosition(val);
     console.log(position);
-  }, 300);
-  // const updateY = _.debounce((val) => {
-  //   setY(val);
-  // }, 200);
-  const updateHello = _.debounce((val) => {
-    console.log(val);
-  }, 200);
+  }, 150);
   const handleNavigation = React.useCallback(
     (e) => {
       let newPosition;
@@ -52,10 +54,16 @@ const Wrapper = () => {
   return (
     <React.Fragment>
       <div className="wrapper">
+        <Sidebar
+          position={position}
+          eventArray={eventArray}
+          handleClick={setPosition}
+        />
         <Test1 ref={(el) => (wrapperEls.current[0] = el)} id={"hihi"} />
         <Test1 ref={(el) => (wrapperEls.current[1] = el)} id={"hiha"} />
         <Test1 ref={(el) => (wrapperEls.current[2] = el)} id={"hiho"} />
         <Test1 ref={(el) => (wrapperEls.current[3] = el)} id={"hihafaf"} />
+        <Test1 ref={(el) => (wrapperEls.current[4] = el)} id={"concacon"} />
       </div>
     </React.Fragment>
   );
