@@ -1,0 +1,70 @@
+.home {
+  display: flex;
+  width: 1400px;
+  margin: 0 auto;
+}
+.clock-wrapper {
+  position: relative;
+  color: white;
+  flex: 1;
+}
+.clock-wrapper:before,
+.clock-wrapper:after {
+  content: " ";
+  display: table;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table /* 2;; */;
+}
+.clock-wrapper .tile-days .digit {
+  font-size: 80px;
+  line-height: 64px;
+  margin-bottom: 8px;
+  font-weight: lighter;
+  vertical-align: middle;
+  line-height: 1em;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", sans-serif;
+  position: relative;
+}
+.clock-wrapper .tile {
+  font-size: 32px;
+}
+.clock-wrapper .tile .txt {
+  font-size: 20px;
+  padding-left: 5px;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+}
+.clock-wrapper .tile-days {
+  position: relative;
+}
+.clock-wrapper .tile-days:after {
+  right: 0;
+  left: 30%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  position: absolute;
+  content: "";
+  background: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.clock-wrapper .title {
+  text-align: left;
+  margin-top: 16px;
+}
+.secondary {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+.main-content {
+  flex: 2;
+  background-color: red;
+}

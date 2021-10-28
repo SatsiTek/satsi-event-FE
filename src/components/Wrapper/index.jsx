@@ -1,5 +1,6 @@
 import React from "react";
 import Test1 from "../Test1/";
+import Home from "../Home";
 import Sidebar from "../Sidebar";
 import "./Wrapper.css";
 import _ from "lodash";
@@ -59,7 +60,12 @@ const Wrapper = () => {
           eventArray={eventArray}
           handleClick={setPosition}
         />
-        <Test1 ref={(el) => (wrapperEls.current[0] = el)} id={"hihi"} />
+        <Home
+          ref={(el) => (wrapperEls.current[0] = el)}
+          id={"home"}
+          timeTillDate="28/10/2021 09:15:00"
+          timeFormat="DD MM YYYY hh:mm:ss"
+        />
         <Test1 ref={(el) => (wrapperEls.current[1] = el)} id={"hiha"} />
         <Test1 ref={(el) => (wrapperEls.current[2] = el)} id={"hiho"} />
         <Test1 ref={(el) => (wrapperEls.current[3] = el)} id={"hihafaf"} />
