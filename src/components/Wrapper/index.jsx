@@ -4,6 +4,7 @@ import Home from "../Home";
 import Sidebar from "../Sidebar";
 import "./Wrapper.css";
 import _ from "lodash";
+import moment from "moment";
 
 const eventArray = [
   { href: "hihi", icon: <ion-icon name="logo-angular"></ion-icon> },
@@ -63,8 +64,7 @@ const Wrapper = () => {
         <Home
           ref={(el) => (wrapperEls.current[0] = el)}
           id={"home"}
-          timeTillDate="28/10/2021 09:15:00"
-          timeFormat="DD MM YYYY hh:mm:ss"
+          timeTillDate="2021/10/31 14:27:06"
         />
         <Test1 ref={(el) => (wrapperEls.current[1] = el)} id={"hiha"} />
         <Test1 ref={(el) => (wrapperEls.current[2] = el)} id={"hiho"} />

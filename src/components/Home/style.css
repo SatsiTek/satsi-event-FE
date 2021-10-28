@@ -1,17 +1,30 @@
 .home {
   display: flex;
-  width: 1400px;
+  width: 1450px;
   margin: 0 auto;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
 }
 .clock-wrapper {
+  margin-top: 120px;
   position: relative;
   color: white;
   flex: 1;
 }
-.clock-wrapper:before,
-.clock-wrapper:after {
+.clock-wrapper:before {
   content: " ";
   display: table;
+}
+.clock-wrapper:after {
+  content: "";
+  position: absolute;
+  left: auto;
+  right: 65px;
+  top: -82px;
+  bottom: 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .clearfix:before,
 .clearfix:after {
@@ -33,7 +46,7 @@
   font-size: 32px;
 }
 .clock-wrapper .tile .txt {
-  font-size: 20px;
+  font-size: 12px;
   padding-left: 5px;
   font-weight: normal;
   display: inline-block;
@@ -44,7 +57,7 @@
 }
 .clock-wrapper .tile-days:after {
   right: 0;
-  left: 30%;
+  left: 20%;
   top: 0;
   bottom: 0;
   width: 1px;
@@ -62,9 +75,32 @@
 .secondary {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 45%;
 }
 .main-content {
   flex: 2;
-  background-color: red;
+  display: flex;
+  align-items: center;
+}
+.title h2 {
+  font-size: 60px;
+  margin-bottom: 8px;
+}
+.anim-wrapper h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.anim-wrapper p {
+  font-size: 14px;
+}
+.icon-section {
+  position: absolute;
+  font-size: 72px;
+  line-height: 0.8em;
+  height: 0.9em;
+  text-align: left;
+  left: 0;
+  bottom: 10%;
+  left: 0;
+  right: 0;
 }
