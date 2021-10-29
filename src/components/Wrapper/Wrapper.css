@@ -9,7 +9,7 @@
   z-index: -1;
 }
 .wrapper::before {
-  content: "";
+  content: '';
   background-color: rgba(4, 9, 29, 0.7);
   position: fixed;
   top: 0;
@@ -17,4 +17,120 @@
   bottom: 0;
   right: 0;
   z-index: 0;
+}
+.aboutUs {
+  z-index: 1;
+  position: relative;
+}
+.aboutUs p {
+  opacity: 0;
+  transition: all 0.6s;
+  transform: translateY(-100%);
+}
+.aboutUs h1 {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(120%);
+}
+.aboutUs h2 {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(120%);
+}
+.aboutUs .buttonContain {
+  opacity: 0;
+  transition: all 0.4s;
+}
+.services {
+  z-index: 1;
+  position: relative;
+}
+.services h1 {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(120%);
+}
+.services h2 {
+  position: relative;
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+}
+.services .rightColumn h2::before {
+  content: '';
+  background: #ffffff;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: left 0.3s, width 0.3s, opacity 0.5s;
+}
+.services p {
+  opacity: 0;
+  transition: all 0.6s;
+  transform: translateY(-100%);
+}
+.services .buttonContain {
+  opacity: 0;
+  transition: all 0.4s;
+}
+.projects {
+  z-index: 1;
+  position: relative;
+}
+.projects .slideTitle {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(100%);
+}
+.projects p {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(-100%);
+}
+.projects .slideCategory {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(-100%);
+}
+.active p {
+  transition-delay: 1s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active h1 {
+  transition-delay: 0.6s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active h2 {
+  transition-delay: 0.8s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active .buttonContain {
+  transition-delay: 1.2s;
+  opacity: 1;
+}
+.active .slideTitle {
+  transition-delay: 0.8s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active .slideCategory {
+  transition-delay: 0.6s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active .rightColumn h2::before {
+  opacity: 1;
+  transition: left 0.9s, width 0.3s;
+  transition-delay: 0.9s;
+
+  width: 100%;
+  left: 100%;
 }

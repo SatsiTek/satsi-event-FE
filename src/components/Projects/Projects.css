@@ -1,0 +1,67 @@
+.projectsContain {
+  display: flex;
+  padding-top: 50px;
+  height: 100vh;
+}
+.slideImage {
+  width: 360px;
+  height: auto;
+}
+.slideRightContent {
+  max-width: 100%;
+  margin: 100px 30px;
+}
+.navigationBtn {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.prevBtn {
+  position: relative;
+  padding-right: 10px;
+  border-right: 2px solid #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+.prevBtn::after {
+  position: absolute;
+  bottom: -5px;
+
+  opacity: 0;
+  height: 2px;
+  left: -16px;
+  right: -16px;
+  background-color: #fff;
+  content: '';
+}
+.prevBtn:hover::after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: 0.3s all;
+}
+.nextBtn {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+}
+.nextBtn::after {
+  position: absolute;
+  bottom: -5px;
+
+  opacity: 0;
+  height: 2px;
+  left: -16px;
+  right: -16px;
+  background-color: #fff;
+  content: '';
+}
+.nextBtn:hover::after {
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: 0.3s all;
+}
+.slideTitle {
+  color: #4ca6ff;
+}

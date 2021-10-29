@@ -1,7 +1,10 @@
-import React from "react";
-import "./Wrapper.css";
-import Test1 from "../Test1/";
-import _ from "lodash";
+import React from 'react';
+import './Wrapper.css';
+import Test1 from '../Test1/';
+import AboutUs from '../AboutUs/';
+import _ from 'lodash';
+import Services from '../Services';
+import Projects from '../Projects/Projects';
 const Wrapper = () => {
   const [position, setPosition] = React.useState(0);
   // const [y, setY] = React.useState(window.scrollY);
@@ -15,9 +18,9 @@ const Wrapper = () => {
   // const updateY = _.debounce((val) => {
   //   setY(val);
   // }, 200);
-  const updateHello = _.debounce((val) => {
-    console.log(val);
-  }, 200);
+  // const updateHello = _.debounce((val) => {
+  //   console.log(val);
+  // }, 200);
   const handleNavigation = React.useCallback(
     (e) => {
       let newPosition;
@@ -39,23 +42,39 @@ const Wrapper = () => {
     [updatePosition, position]
   );
   React.useEffect(() => {
-    window.addEventListener("wheel", handleNavigation);
+    window.addEventListener('wheel', handleNavigation);
     return () => {
-      window.removeEventListener("wheel", handleNavigation);
+      window.removeEventListener('wheel', handleNavigation);
     };
   }, [handleNavigation]);
   React.useEffect(() => {
     wrapperEls.current[position].scrollIntoView({
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }, [position]);
   return (
     <React.Fragment>
-      <div className="wrapper">
-        <Test1 ref={(el) => (wrapperEls.current[0] = el)} id={"hihi"} />
-        <Test1 ref={(el) => (wrapperEls.current[1] = el)} id={"hiha"} />
-        <Test1 ref={(el) => (wrapperEls.current[2] = el)} id={"hiho"} />
-        <Test1 ref={(el) => (wrapperEls.current[3] = el)} id={"hihafaf"} />
+      <div className='wrapper'>
+        <Test1 ref={(el) => (wrapperEls.current[0] = el)} id={'hihi'} />
+        <div
+          className={position === 1 ? 'aboutUs active' : 'aboutUs'}
+          ref={(el) => (wrapperEls.current[1] = el)}
+        >
+          <AboutUs />
+        </div>
+
+        <div
+          className={position === 2 ? 'services active' : 'services'}
+          ref={(el) => (wrapperEls.current[2] = el)}
+        >
+          <Services />
+        </div>
+        <div
+          className={position === 3 ? 'projects active' : 'projects'}
+          ref={(el) => (wrapperEls.current[3] = el)}
+        >
+          <Projects />
+        </div>
       </div>
     </React.Fragment>
   );

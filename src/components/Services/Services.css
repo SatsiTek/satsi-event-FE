@@ -1,0 +1,27 @@
+.contain {
+  display: flex;
+  padding-top: 50px;
+  height: 100vh;
+}
+.leftColumn {
+  color: #fff;
+  width: 25%;
+  border-right: 1px solid #fff;
+}
+.rightColumn {
+  color: #fff;
+  width: 70%;
+}
+
+.leftContent {
+  color: #fff;
+  margin: 60px 20px;
+}
+.servicesRightContent {
+  max-width: 100%;
+  margin: 100px 30px;
+}
+.services {
+  display: flex;
+  gap: 20px;
+}
