@@ -1,17 +1,16 @@
-import React from 'react';
-import Test1 from '../Test1/';
-import Home from '../Home';
-import Sidebar from '../Sidebar';
-import './Wrapper.css';
-import _ from 'lodash';
-import AboutUs from '../AboutUs';
-import Services from '../Services';
-import Projects from '../Projects/Projects';
+import React from "react";
+import Home from "../Home";
+import Sidebar from "../Sidebar";
+import "./Wrapper.css";
+import _ from "lodash";
+import AboutUs from "../AboutUs";
+import Services from "../Services";
+import Projects from "../Projects/Projects";
 const eventArray = [
-  { href: 'hihi', icon: <ion-icon name='logo-angular'></ion-icon> },
-  { href: 'hiha', icon: <ion-icon name='logo-css3'></ion-icon> },
-  { href: 'hiho', icon: <ion-icon name='logo-octocat'></ion-icon> },
-  { href: 'hihafaf', icon: <ion-icon name='logo-github'></ion-icon> },
+  { href: "hihi", icon: <ion-icon name="logo-angular"></ion-icon> },
+  { href: "hiha", icon: <ion-icon name="logo-css3"></ion-icon> },
+  { href: "hiho", icon: <ion-icon name="logo-octocat"></ion-icon> },
+  { href: "hihafaf", icon: <ion-icon name="logo-github"></ion-icon> },
   // { href: 'concacon', icon: <ion-icon name='logo-javascript'></ion-icon> },
 ];
 
@@ -50,42 +49,42 @@ const Wrapper = () => {
     [updatePosition, position]
   );
   React.useEffect(() => {
-    window.addEventListener('wheel', handleNavigation);
+    window.addEventListener("wheel", handleNavigation);
     return () => {
-      window.removeEventListener('wheel', handleNavigation);
+      window.removeEventListener("wheel", handleNavigation);
     };
   }, [handleNavigation]);
   React.useEffect(() => {
     wrapperEls.current[position].scrollIntoView({
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, [position]);
   return (
     <React.Fragment>
-      <div className='wrapper'>
-        <div className={position === 0 ? 'homeContain active' : 'homeContain'}>
+      <div className="wrapper">
+        <div className={position === 0 ? "homeContain active" : "homeContain"}>
           <Home
             ref={(el) => (wrapperEls.current[0] = el)}
-            id={'home'}
-            timeTillDate='2021/10/31 14:27:06'
+            id={"home"}
+            timeTillDate="2021/10/31 14:27:06"
           />
         </div>
 
         <div
-          className={position === 1 ? 'aboutUs active' : 'aboutUs'}
+          className={position === 1 ? "aboutUs active" : "aboutUs"}
           ref={(el) => (wrapperEls.current[1] = el)}
         >
           <AboutUs />
         </div>
 
         <div
-          className={position === 2 ? 'services active' : 'services'}
+          className={position === 2 ? "services active" : "services"}
           ref={(el) => (wrapperEls.current[2] = el)}
         >
           <Services />
         </div>
         <div
-          className={position === 3 ? 'projects active' : 'projects'}
+          className={position === 3 ? "projects active" : "projects"}
           ref={(el) => (wrapperEls.current[3] = el)}
         >
           <Projects />
