@@ -97,6 +97,25 @@
   transition: all 0.4s;
   transform: translateY(-100%);
 }
+.home h2 {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(100%);
+}
+.home h3 {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(100%);
+}
+.home p {
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(-100%);
+}
+.home .buttonContain {
+  opacity: 0;
+  transition: all 0.4s;
+}
 .active p {
   transition-delay: 1s;
   transform: translateY(0);
@@ -108,6 +127,16 @@
   opacity: 1;
 }
 .active h2 {
+  transition-delay: 0.8s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active .home h2 {
+  transition-delay: 0.6s;
+  transform: translateY(0);
+  opacity: 1;
+}
+.active h3 {
   transition-delay: 0.8s;
   transform: translateY(0);
   opacity: 1;

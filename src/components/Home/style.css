@@ -1,0 +1,102 @@
+.home {
+  padding-top: 50px;
+  display: flex;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+.clock-wrapper {
+  margin: 60px 20px;
+  color: white;
+}
+.clock-wrapper:before {
+  content: ' ';
+  display: table;
+}
+/* .clock-wrapper:after {
+  content: '';
+  position: absolute;
+  left: auto;
+  right: 65px;
+  top: -82px;
+  bottom: 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+} */
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table /* 2;; */;
+}
+.clock-wrapper .tile-days .digit {
+  font-size: 80px;
+  line-height: 64px;
+  margin-bottom: 8px;
+  font-weight: lighter;
+  vertical-align: middle;
+  line-height: 1em;
+  display: inline-block;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  position: relative;
+}
+.clock-wrapper .tile {
+  font-size: 32px;
+}
+.clock-wrapper .tile .txt {
+  font-size: 12px;
+  padding-left: 5px;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+}
+.clock-wrapper .tile-days {
+  position: relative;
+}
+.clock-wrapper .tile-days:after {
+  right: 0;
+  left: 20%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  position: absolute;
+  content: '';
+  background: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.clock-wrapper .title {
+  text-align: left;
+  margin-top: 16px;
+}
+.secondary {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+.main-content {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+.title h2 {
+  font-size: 60px;
+  margin-bottom: 8px;
+}
+.anim-wrapper h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.anim-wrapper p {
+  font-size: 14px;
+}
+.icon-section {
+  position: absolute;
+  font-size: 72px;
+  line-height: 0.8em;
+  height: 0.9em;
+
+  bottom: 30px;
+  left: 30px;
+}
