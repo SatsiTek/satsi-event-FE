@@ -100,3 +100,37 @@
   bottom: 30px;
   left: 30px;
 }
+.subTitle {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    padding-top: 0;
+    align-items: center;
+  }
+  .icon-section {
+    position: unset;
+    text-align: center;
+  }
+  .clock-wrapper {
+    margin: 20px 10px;
+  }
+  .clock-wrapper h2,
+  .clock-wrapper h1,
+  .clock-wrapper p,
+  .main-content h3,
+  .main-content h2,
+  .main-content p,
+  .main-content h1 {
+    text-align: center;
+  }
+  .main-content .title h2 {
+    margin: 20px;
+  }
+}
+@media (max-width: 300px) {
+  .main-content {
+    margin: 0;
+  }
+}

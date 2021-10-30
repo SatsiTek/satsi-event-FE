@@ -5,6 +5,9 @@ const AboutUs = () => {
     <div className='contain'>
       <div className='leftColumn'>
         <div className='leftContent'>
+          <div className='icon-section'>
+            <ion-icon name='information-circle-outline'></ion-icon>
+          </div>
           <h2>About us</h2>
           <p>
             Do not spend your valuable time building website from scratch.
@@ -13,15 +16,6 @@ const AboutUs = () => {
           </p>
           <p>And do not forget to subscribe to our newsletter :</p>
           <button className='registerBtn'>Register</button>
-          <ion-icon
-            style={{
-              fontSize: 64,
-              position: 'absolute',
-              left: 30,
-              bottom: 30,
-            }}
-            name='information-circle-outline'
-          ></ion-icon>
         </div>
       </div>
       <div className='rightColumn'>

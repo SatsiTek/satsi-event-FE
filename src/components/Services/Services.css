@@ -24,4 +24,50 @@
 .services {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+}
+.servicesContent {
+  width: 20%;
+}
+@media (max-width: 768px) {
+  .contain {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .rightColumn {
+    width: 100%;
+  }
+  .leftColumn {
+    width: 100%;
+  }
+  .servicesContent {
+    width: 40%;
+  }
+  .leftContent {
+    margin: 20px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .servicesContent {
+    width: 100%;
+  }
+  .leftContent h2,
+  .rightContent h2,
+  .rightContent h1,
+  .rightContent p,
+  .rightContent h3,
+  .leftContent p,
+  .servicesContent {
+    text-align: center;
+  }
+  .leftContent {
+    text-align: center;
+  }
+  .rightContent {
+    text-align: center;
+  }
+  .servicesRightContent {
+    margin: 20px 10px;
+    text-align: center;
+  }
 }

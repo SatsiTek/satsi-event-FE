@@ -35,6 +35,9 @@ const Home = React.forwardRef((props, ref) => {
       <div className='leftColumn'>
         {' '}
         <div class='clock-wrapper'>
+          <div className='icon-section'>
+            <ion-icon name='logo-angular'></ion-icon>
+          </div>
           <div class='clock-hms clearfix'>
             <div class='tile tile-days'>
               <span class='days digit'>{time.days}</span>
@@ -57,13 +60,8 @@ const Home = React.forwardRef((props, ref) => {
             </div>
           </div>
 
-          <div class='title'>
-            <span class='anim-wrapper'>
-              <p>New Website available soon in 2019</p>
-            </span>
-          </div>
-          <div className='icon-section'>
-            <ion-icon name='logo-angular'></ion-icon>
+          <div class='subTitle'>
+            <p>New Website available soon in 2019</p>
           </div>
         </div>
       </div>

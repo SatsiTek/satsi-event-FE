@@ -56,18 +56,12 @@ const Projects = () => {
     <div className='projectsContain'>
       <div className='leftColumn'>
         <div className='leftContent'>
+          <div className='icon-section'>
+            <ion-icon name='images-outline'></ion-icon>
+          </div>
           <h2>Projects</h2>
           <p>Just a few sample among our huge amount of projects.</p>
           <button className='registerBtn'>Register</button>
-          <ion-icon
-            style={{
-              fontSize: 64,
-              position: 'absolute',
-              left: 30,
-              bottom: 30,
-            }}
-            name='images-outline'
-          ></ion-icon>
         </div>
       </div>
       <div className='rightColumn'>

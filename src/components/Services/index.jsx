@@ -5,6 +5,10 @@ const Services = () => {
     <div className='contain'>
       <div className='leftColumn'>
         <div className='leftContent'>
+          <div className='icon-section'>
+            {' '}
+            <ion-icon name='list-outline'></ion-icon>
+          </div>
           <h2>Services</h2>
           <p>
             Do not spend your valuable time building website from scratch.
@@ -12,21 +16,12 @@ const Services = () => {
             website.
           </p>
         </div>
-        <ion-icon
-          style={{
-            fontSize: 64,
-            position: 'absolute',
-            left: 30,
-            bottom: 30,
-          }}
-          name='list-outline'
-        ></ion-icon>
       </div>
       <div className='rightColumn'>
         <div className='servicesRightContent'>
           <h1>We do</h1>
           <div className='services'>
-            <div>
+            <div className='servicesContent'>
               <h2 className='test'>Painting</h2>
               <p>
                 Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.
@@ -34,7 +29,7 @@ const Services = () => {
                 nulla.
               </p>
             </div>
-            <div>
+            <div className='servicesContent'>
               <h2>Design</h2>
               <p>
                 Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.
@@ -42,7 +37,7 @@ const Services = () => {
                 nulla.
               </p>
             </div>
-            <div>
+            <div className='servicesContent'>
               <h2>Attorney</h2>
               <p>
                 Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.
@@ -50,7 +45,7 @@ const Services = () => {
                 nulla.
               </p>
             </div>
-            <div>
+            <div className='servicesContent'>
               <h2>Restaurant</h2>
               <p>
                 Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.
