@@ -93,3 +93,13 @@ li {
 .main-menu ul li.active a ion-icon {
   color: #4ca6ff;
 }
+@media (max-width: 768px) {
+  #fp-nav-wrapper {
+    top: 20px;
+    right: 10px;
+  }
+  .main-menu {
+    bottom: 20px;
+    right: 10px;
+  }
+}

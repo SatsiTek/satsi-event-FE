@@ -10,7 +10,7 @@
 }
 .rightColumn {
   color: #fff;
-  width: 70%;
+  width: 75%;
 }
 
 .leftContent {
@@ -27,12 +27,13 @@
   flex-wrap: wrap;
 }
 .servicesContent {
-  width: 20%;
+  width: 22%;
 }
 @media (max-width: 768px) {
   .contain {
     flex-direction: column;
     padding-top: 0;
+    height: auto;
   }
   .rightColumn {
     width: 100%;
@@ -41,15 +42,31 @@
     width: 100%;
   }
   .servicesContent {
-    width: 40%;
+    width: 50%;
+  }
+  .servicesContent h2 {
+    font-weight: 400;
   }
   .leftContent {
-    margin: 20px 10px;
+    margin: 0;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
   }
-}
-@media (max-width: 480px) {
-  .servicesContent {
-    width: 100%;
+  .rightContent {
+    text-align: center;
+    margin: 20px 10px;
+    max-width: unset;
+  }
+  .services {
+    gap: 0;
+  }
+  .servicesRightContent h1 {
+    margin-bottom: 10px;
+  }
+  .servicesRightContent {
+    margin: 20px 10px;
+    text-align: center;
   }
   .leftContent h2,
   .rightContent h2,
@@ -60,14 +77,12 @@
   .servicesContent {
     text-align: center;
   }
-  .leftContent {
-    text-align: center;
+}
+@media (max-width: 480px) {
+  .servicesContent {
+    width: 100%;
   }
-  .rightContent {
-    text-align: center;
-  }
-  .servicesRightContent {
-    margin: 20px 10px;
-    text-align: center;
+  .services {
+    gap: 20;
   }
 }

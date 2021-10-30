@@ -70,8 +70,23 @@
     flex-direction: column;
     padding-top: 0;
     align-items: center;
+    height: auto;
   }
   .slideRightContent {
     margin: 20px 10px;
+    text-align: center;
+  }
+  .navigationBtn {
+    justify-content: center;
+  }
+  .slideImage {
+    width: 80%;
+    margin: 0px auto;
+    max-height: 500px;
+  }
+}
+@media (max-width: 480px) {
+  .slideImage {
+    width: 100%;
   }
 }

@@ -11,3 +11,8 @@ html {
   scroll-behavior: smooth;
   overflow: hidden;
 }
+@media (max-width: 1200px) {
+  html {
+    overflow: scroll;
+  }
+}

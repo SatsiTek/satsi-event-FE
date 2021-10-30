@@ -164,4 +164,82 @@
   left: 100%;
 }
 
+@media (max-width: 1024px) {
+  .aboutUs p {
+    opacity: 1;
+    transition: all 0.6s;
+    transform: unset;
+  }
+  .aboutUs h1 {
+    opacity: 1;
+    transition: all 0.4s;
+    transform: unset;
+  }
+  .aboutUs h2 {
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .aboutUs .buttonContain {
+    opacity: 1;
+    transition: all 0.4s;
+  }
+  .services {
+    z-index: 1;
+    position: relative;
+  }
+  .services h1 {
+    opacity: 1;
+    /* transition: all 0.4s; */
+    transform: unset;
+  }
+  .services h2 {
+    position: relative;
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .services .rightColumn h2::before {
+    display: none;
+  }
+  .services p {
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .services .buttonContain {
+    opacity: 1;
+    transition: unset;
+  }
 
+  .projects .slideTitle {
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .projects p {
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .projects .slideCategory {
+    opacity: 1;
+    transition: unset;
+    transform: unset;
+  }
+  .home h2 {
+    opacity: 1;
+    transform: unset;
+  }
+  .home h3 {
+    opacity: 1;
+    transform: unset;
+  }
+  .home p {
+    opacity: 1;
+    transform: unset;
+  }
+  .home .buttonContain {
+    opacity: 1;
+  }
+}
