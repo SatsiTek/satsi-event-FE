@@ -1,59 +1,59 @@
 {
   "register": [
     {
-      "id": 1,
-      "name": "lsdkfjsd",
-      "phone": "0923439438",
-      "email": "123@gmail.com",
-      "birthDay": "1998/01/01",
-      "address": "ha noi"
+      "name": "tommydavang",
+      "phone": "0923412312",
+      "email": "langtuxom9@gmail.com",
+      "birthDay": "2021-11-18",
+      "address": "ha tay",
+      "id": 1
     },
     {
       "name": "tommydavang",
-      "phone": "834234234234",
-      "email": "123@gmail.com",
+      "phone": "0923412312",
+      "email": "langtuxom9@gmail.com",
       "birthDay": "2021-11-18",
       "address": "ha tay",
       "id": 2
     },
     {
       "name": "tommydavang",
-      "phone": "8342342342345",
-      "email": "123@gmail.com",
-      "birthDay": "2021-11-18",
+      "phone": "0923412312",
+      "email": "langtuxom9@gmail.com",
+      "birthDay": "2021-11-26",
       "address": "ha tay",
       "id": 3
     },
     {
       "name": "tommydavang",
-      "phone": "9328748923742348923749823",
-      "email": "123@gmail.com",
-      "birthDay": "2021-11-18",
+      "phone": "0923432434",
+      "email": "langtuxom81@gmail.com",
+      "birthDay": "2021-11-26",
       "address": "ha tay",
       "id": 4
     },
     {
-      "name": "tommydavang",
-      "phone": "0923840923",
-      "email": "123@gmail.com",
-      "birthDay": "2021-11-18",
+      "name": "pham duy thanh",
+      "phone": "0923843984",
+      "email": "langtuxom81@gmail.com",
+      "birthDay": "2021-11-11",
       "address": "ha tay",
       "id": 5
     },
     {
-      "name": "tommydavang",
-      "phone": "0908998797",
-      "email": "123@gmail.com",
-      "birthDay": "2015-06-11",
+      "name": "erwrds",
+      "phone": "0923412312",
+      "email": "langtuxom81@gmail.com",
+      "birthDay": "2021-11-20",
       "address": "ha tay",
       "id": 6
     },
     {
-      "name": "deo hieu kieu gi",
-      "phone": "0908998767",
+      "name": "tommydavang",
+      "phone": "0923412312",
       "email": "12345@gmail.com",
-      "birthDay": "2015-06-11",
-      "address": "ha noi",
+      "birthDay": "2021-11-19",
+      "address": "ha tay",
       "id": 7
     }
   ]

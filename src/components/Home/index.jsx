@@ -3,20 +3,18 @@ import './style.css';
 import registerApi from '../../api/registerApi';
 import { useForm } from 'react-hook-form';
 import logo from '../../asset/logo-satsi.png';
+import qrImg from '../../asset/qr-img.jpg';
+
 const Home = React.forwardRef((props, ref) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  // const [registerInfo, setRegisterInfo] = React.useState({
-  //   name: '',
-  //   phone: '',
-  //   email: '',
-
-  //   birthDay: '',
-  //   address: '',
-  // });
+  const [success, setSuccess] = React.useState(false);
+  const [failure, setFailure] = React.useState(false);
+  const [disabledBtn, setDisableBtn] = React.useState(false);
   const [time, setTime] = React.useState({
     days: undefined,
     hours: undefined,
@@ -54,8 +52,21 @@ const Home = React.forwardRef((props, ref) => {
   const handleFormSubmit = async (data) => {
     try {
       const res = await registerApi.register(data);
+      setSuccess(true);
+      setDisableBtn(true);
+      setTimeout(() => {
+        setSuccess(false);
+        setDisableBtn(false);
+        reset();
+      }, 2000);
       console.log(res);
     } catch (error) {
+      setFailure(true);
+      setTimeout(() => {
+        setFailure(false);
+        // reset();
+      }, 2000);
+
       console.log(error);
     }
   };
@@ -101,7 +112,7 @@ const Home = React.forwardRef((props, ref) => {
             <div class='title-desc'>
               <div class='t-wrapper'>
                 <header class='title'>
-                  <img className='logo' src={logo}  />
+                  <img className='logo' src={logo} />
                   <span class='anim-wrapper'>
                     <h2>
                       SATSI - VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG
@@ -124,8 +135,14 @@ const Home = React.forwardRef((props, ref) => {
               </div>
             </div>
 
-            <div class='cta-btns'>
+            <div className='registerForm'>
               <form className='form' onSubmit={handleSubmit(handleFormSubmit)}>
+                {success && (
+                  <div className='notiSuccess'> đăng ký thành công</div>
+                )}
+                {failure && (
+                  <div className='notiFailure'> đăng ký không thành công</div>
+                )}
                 <input
                   {...register('name', {
                     required: 'vui lòng nhập trường này',
@@ -197,12 +214,17 @@ const Home = React.forwardRef((props, ref) => {
                 {errors.address && (
                   <span className='errorMessage'>{errors.address.message}</span>
                 )}
-                <a class='btn arrow-circ-btn buttonContain'>
-                  <button type='submit' className='registerBtn'>
+                <div class=' buttonContain'>
+                  <button
+                    disabled={disabledBtn}
+                    type='submit'
+                    className='registerBtn'
+                  >
                     Đăng ký
                   </button>
-                </a>
+                </div>
               </form>
+              <img className='qrImg' src={qrImg} />
             </div>
           </div>
         </div>

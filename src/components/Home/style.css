@@ -106,15 +106,15 @@
 }
 
 .formInput {
-  height: 50px;
+  height: 40px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   border-radius: 5px;
 }
 .invalidFormInput {
-  height: 50px;
+  height: 40px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   border-radius: 5px;
   border: orange 2px solid;
 }
@@ -122,18 +122,74 @@
   border: orange 2px solid;
 } */
 .form {
-  max-width: 500px;
+  width: 500px;
+  display: inline-block;
+  margin-right: 30px;
 }
 .errorMessage {
   color: orange;
   font-size: 12px;
   display: block;
 }
+input[type='date'] {
+  text-align: center;
+}
+
+input[type='date']:before {
+  color: #333;
+  content: attr(placeholder) !important;
+  margin-right: 0.5em;
+}
+.notiSuccess {
+  width: 500px;
+  background-color: rgb(19, 197, 19);
+  color: #fff;
+  height: 40px;
+  padding: 7px;
+  text-align: center;
+  border-radius: 5px;
+}
+.notiFailure {
+  width: 500px;
+  background-color: red;
+  color: #fff;
+  height: 40px;
+  padding: 7px;
+  text-align: center;
+  border-radius: 5px;
+}
+/* .registerForm {
+  display: flex;
+  gap: 30px;
+} */
+.qrImg {
+  height: 250px;
+  margin-bottom: 60px;
+}
+@media (max-width: 1024px) {
+  .qrImg {
+    display: none;
+  }
+  .form {
+    display: block;
+    margin-right: 0;
+  }
+}
 @media (max-width: 768px) {
+  .notiFailure {
+    width: auto;
+    max-width: 500px;
+  }
+  .notiSuccess {
+    width: auto;
+    max-width: 500px;
+  }
   .title {
     text-align: center;
   }
-  .form{
+  .form {
+    width: auto;
+    max-width: 500px;
     text-align: center;
   }
   .home {
