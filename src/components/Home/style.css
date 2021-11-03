@@ -55,7 +55,7 @@
 }
 .clock-wrapper .tile-days:after {
   right: 0;
-  left: 20%;
+  left: 100px;
   top: 0;
   bottom: 0;
   width: 1px;
