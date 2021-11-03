@@ -1,13 +1,29 @@
 import React from 'react';
 import './style.css';
-
+import registerApi from '../../api/registerApi';
+import { useForm } from 'react-hook-form';
+import logo from '../../asset/logo-satsi.png';
 const Home = React.forwardRef((props, ref) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  // const [registerInfo, setRegisterInfo] = React.useState({
+  //   name: '',
+  //   phone: '',
+  //   email: '',
+
+  //   birthDay: '',
+  //   address: '',
+  // });
   const [time, setTime] = React.useState({
     days: undefined,
     hours: undefined,
     mins: undefined,
     secs: undefined,
   });
+  console.log(errors);
   React.useEffect(() => {
     const { timeTillDate } = props;
     const compareDate = new Date(timeTillDate);
@@ -30,6 +46,19 @@ const Home = React.forwardRef((props, ref) => {
     };
   }, [props]);
   const { id } = props;
+
+  // const handleChangeInput = (e) => {
+  //   setRegisterInfo({ ...registerInfo, [e.target.name]: e.target.value });
+  // };
+  // console.log(registerInfo);
+  const handleFormSubmit = async (data) => {
+    try {
+      const res = await registerApi.register(data);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className='home' ref={ref} id={id}>
       <div className='leftColumn'>
@@ -46,22 +75,22 @@ const Home = React.forwardRef((props, ref) => {
 
             <div class='secondary'>
               <div class='tile tile-hours'>
-                <span class='hours digit'>{time.hours}</span>
+                <span class='hours digit'>{`0${time.hours}`.slice(-2)}</span>
                 <span class='txt'>hours</span>
               </div>
               <div class='tile tile-minutes'>
-                <span class='minutes digit'>{time.mins}</span>
+                <span class='minutes digit'>{`0${time.mins}`.slice(-2)}</span>
                 <span class='txt'>mins</span>
               </div>
               <div class='tile tile-seconds'>
-                <span class='seconds digit'>{time.secs}</span>
+                <span class='seconds digit'>{`0${time.secs}`.slice(-2)}</span>
                 <span class='txt'>secs</span>
               </div>
             </div>
           </div>
 
           <div class='subTitle'>
-            <p>New Website available soon in 2019</p>
+            <p>Hội thảo du học Úc</p>
           </div>
         </div>
       </div>
@@ -72,20 +101,23 @@ const Home = React.forwardRef((props, ref) => {
             <div class='title-desc'>
               <div class='t-wrapper'>
                 <header class='title'>
+                  <img className='logo' src={logo}  />
                   <span class='anim-wrapper'>
                     <h2>
-                      <strong>Coming soon</strong>
+                      SATSI - VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG
+                      NGHỆ CAO
                     </h2>
                   </span>
                   <span class='anim-wrapper'>
-                    <h3>Are you ready?</h3>
+                    <h3>Hội thảo du học Úc</h3>
                   </span>
                 </header>
                 <div class='desc'>
                   <span class='anim-wrapper'>
                     <p>
-                      Ever wanted to impress your audience at first view? Use
-                      this unique and beautiful website template.
+                      Du học Úc là lựa chọn lý tưởng của sinh viên quốc tế bởi
+                      chất lượng đào tạo xuất sắc, nguồn học bổng dồi dào cùng
+                      môi trường sống an toàn thân thiện.
                     </p>
                   </span>
                 </div>
@@ -93,13 +125,84 @@ const Home = React.forwardRef((props, ref) => {
             </div>
 
             <div class='cta-btns'>
-              <span class='anim-wrapper'>
-                <a class='btn arrow-circ-btn buttonContain' href='#about-us'>
-                  {/* <span class='txt'>About us</span>
-                  <span class='arrow-icon'></span> */}
-                  <button className='registerBtn'>About us</button>
+              <form className='form' onSubmit={handleSubmit(handleFormSubmit)}>
+                <input
+                  {...register('name', {
+                    required: 'vui lòng nhập trường này',
+                  })}
+                  // onChange={handleChangeInput}
+                  placeholder='Họ tên'
+                  name='name'
+                  className={errors.name ? 'invalidFormInput' : 'formInput'}
+                  type='text'
+                />
+                {errors.name && (
+                  <span className='errorMessage'>{errors.name.message}</span>
+                )}
+                <input
+                  {...register('phone', {
+                    required: 'vui lòng nhập trường này',
+                    pattern: {
+                      value: /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/,
+                      message: 'nhập đúng số điện thoại',
+                    },
+                  })}
+                  // onChange={handleChangeInput}
+                  placeholder='Số điện thoại'
+                  className={errors.phone ? 'invalidFormInput' : 'formInput'}
+                  type='tel'
+                />
+                {errors.phone && (
+                  <span className='errorMessage'>{errors.phone.message}</span>
+                )}
+                <input
+                  {...register('email', {
+                    required: 'vui lòng nhập trường này',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'nhập đúng email của bạn',
+                    },
+                  })}
+                  // onChange={handleChangeInput}
+                  placeholder='Email'
+                  className={errors.email ? 'invalidFormInput' : 'formInput'}
+                  type='text'
+                />
+                {errors.email && (
+                  <span className='errorMessage'>{errors.email.message}</span>
+                )}
+                <input
+                  {...register('birthDay', {
+                    required: 'vui lòng nhập trường này',
+                  })}
+                  // onChange={handleChangeInput}
+                  placeholder='Ngày sinh'
+                  className={errors.birthDay ? 'invalidFormInput' : 'formInput'}
+                  type='date'
+                />
+                {errors.birthDay && (
+                  <span className='errorMessage'>
+                    {errors.birthDay.message}
+                  </span>
+                )}
+                <input
+                  {...register('address', {
+                    required: 'vui lòng nhập trường này',
+                  })}
+                  placeholder='Địa chỉ'
+                  className={errors.address ? 'invalidFormInput' : 'formInput'}
+                  type='text'
+                  // onChange={handleChangeInput}
+                />
+                {errors.address && (
+                  <span className='errorMessage'>{errors.address.message}</span>
+                )}
+                <a class='btn arrow-circ-btn buttonContain'>
+                  <button type='submit' className='registerBtn'>
+                    Đăng ký
+                  </button>
                 </a>
-              </span>
+              </form>
             </div>
           </div>
         </div>

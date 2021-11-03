@@ -81,8 +81,9 @@
   margin: 0 30px;
 }
 .title h2 {
-  font-size: 60px;
+  font-size: 36px;
   margin-bottom: 8px;
+  margin-top: 0;
 }
 .anim-wrapper h3 {
   font-size: 1.8rem;
@@ -100,8 +101,41 @@
   bottom: 30px;
   left: 30px;
 }
+.logo {
+  width: 100px;
+}
 
+.formInput {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.invalidFormInput {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: orange 2px solid;
+}
+/* .invalidFormInput:focus {
+  border: orange 2px solid;
+} */
+.form {
+  max-width: 500px;
+}
+.errorMessage {
+  color: orange;
+  font-size: 12px;
+  display: block;
+}
 @media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+  .form{
+    text-align: center;
+  }
   .home {
     flex-direction: column;
     padding-top: 0;
@@ -156,14 +190,13 @@
   .main-content .title h2 {
     margin: 20px;
   }
-  .cta-btns {
-    text-align: center;
-  }
+
   .main-content {
     margin: 20px 10px;
     justify-content: center;
   }
 }
+
 @media (max-width: 480px) {
   .secondary {
     width: 45%;

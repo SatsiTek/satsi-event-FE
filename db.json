@@ -1,0 +1,60 @@
+{
+  "register": [
+    {
+      "id": 1,
+      "name": "lsdkfjsd",
+      "phone": "0923439438",
+      "email": "123@gmail.com",
+      "birthDay": "1998/01/01",
+      "address": "ha noi"
+    },
+    {
+      "name": "tommydavang",
+      "phone": "834234234234",
+      "email": "123@gmail.com",
+      "birthDay": "2021-11-18",
+      "address": "ha tay",
+      "id": 2
+    },
+    {
+      "name": "tommydavang",
+      "phone": "8342342342345",
+      "email": "123@gmail.com",
+      "birthDay": "2021-11-18",
+      "address": "ha tay",
+      "id": 3
+    },
+    {
+      "name": "tommydavang",
+      "phone": "9328748923742348923749823",
+      "email": "123@gmail.com",
+      "birthDay": "2021-11-18",
+      "address": "ha tay",
+      "id": 4
+    },
+    {
+      "name": "tommydavang",
+      "phone": "0923840923",
+      "email": "123@gmail.com",
+      "birthDay": "2021-11-18",
+      "address": "ha tay",
+      "id": 5
+    },
+    {
+      "name": "tommydavang",
+      "phone": "0908998797",
+      "email": "123@gmail.com",
+      "birthDay": "2015-06-11",
+      "address": "ha tay",
+      "id": 6
+    },
+    {
+      "name": "deo hieu kieu gi",
+      "phone": "0908998767",
+      "email": "12345@gmail.com",
+      "birthDay": "2015-06-11",
+      "address": "ha noi",
+      "id": 7
+    }
+  ]
+}
