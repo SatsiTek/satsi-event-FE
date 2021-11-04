@@ -66,7 +66,7 @@ const Wrapper = () => {
           <Home
             ref={(el) => (wrapperEls.current[0] = el)}
             id={'home'}
-            timeTillDate='2021/11/30 14:27:06'
+            timeTillDate='2021/11/11 00:00:00'
           />
         </div>
 

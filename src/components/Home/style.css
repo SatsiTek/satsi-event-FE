@@ -123,8 +123,6 @@
 } */
 .form {
   width: 500px;
-  display: inline-block;
-  margin-right: 30px;
 }
 .errorMessage {
   color: orange;
@@ -163,19 +161,33 @@ input[type='date']:before {
   gap: 30px;
 } */
 .qrImg {
-  height: 250px;
-  margin-bottom: 60px;
+  height: 300px;
+  width: 300px;
+  margin-top: 20px;
+}
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.registerForm {
+  display: flex;
+  gap: 30px;
 }
 @media (max-width: 1024px) {
-  .qrImg {
+  /* .qrImg {
     display: none;
-  }
+  } */
   .form {
     display: block;
     margin-right: 0;
   }
 }
 @media (max-width: 768px) {
+  .registerForm {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   .notiFailure {
     width: auto;
     max-width: 500px;
@@ -191,6 +203,7 @@ input[type='date']:before {
     width: auto;
     max-width: 500px;
     text-align: center;
+    margin: 0 auto;
   }
   .home {
     flex-direction: column;

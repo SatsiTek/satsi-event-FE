@@ -60,6 +60,7 @@ const Home = React.forwardRef((props, ref) => {
         reset();
       }, 2000);
       console.log(res);
+      console.log(data);
     } catch (error) {
       setFailure(true);
       setTimeout(() => {
@@ -214,6 +215,13 @@ const Home = React.forwardRef((props, ref) => {
                 {errors.address && (
                   <span className='errorMessage'>{errors.address.message}</span>
                 )}
+                <input
+                  {...register('code')}
+                  placeholder='Mã người giới thiệu'
+                  className='formInput'
+                  type='text'
+                  // onChange={handleChangeInput}
+                />
                 <div class=' buttonContain'>
                   <button
                     disabled={disabledBtn}
