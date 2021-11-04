@@ -138,12 +138,6 @@ const Home = React.forwardRef((props, ref) => {
 
             <div className='registerForm'>
               <form className='form' onSubmit={handleSubmit(handleFormSubmit)}>
-                {success && (
-                  <div className='notiSuccess'> đăng ký thành công</div>
-                )}
-                {failure && (
-                  <div className='notiFailure'> đăng ký không thành công</div>
-                )}
                 <input
                   {...register('name', {
                     required: 'vui lòng nhập trường này',
@@ -222,6 +216,12 @@ const Home = React.forwardRef((props, ref) => {
                   type='text'
                   // onChange={handleChangeInput}
                 />
+                {success && (
+                  <div className='notiSuccess'> đăng ký thành công</div>
+                )}
+                {failure && (
+                  <div className='notiFailure'> đăng ký không thành công</div>
+                )}
                 <div class=' buttonContain'>
                   <button
                     disabled={disabledBtn}

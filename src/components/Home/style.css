@@ -88,6 +88,7 @@
 .anim-wrapper h3 {
   font-size: 1.8rem;
   font-weight: 400;
+  margin: 0 auto;
 }
 .anim-wrapper p {
   font-size: 14px;
@@ -110,6 +111,7 @@
   width: 100%;
   margin-top: 15px;
   border-radius: 5px;
+  padding: 8px;
 }
 .invalidFormInput {
   height: 40px;
@@ -117,6 +119,7 @@
   margin-top: 15px;
   border-radius: 5px;
   border: orange 2px solid;
+  padding: 8px;
 }
 /* .invalidFormInput:focus {
   border: orange 2px solid;
@@ -139,6 +142,7 @@ input[type='date']:before {
   margin-right: 0.5em;
 }
 .notiSuccess {
+  margin-top: 10px;
   width: 500px;
   background-color: rgb(19, 197, 19);
   color: #fff;
@@ -148,6 +152,7 @@ input[type='date']:before {
   border-radius: 5px;
 }
 .notiFailure {
+  margin-top: 10px;
   width: 500px;
   background-color: red;
   color: #fff;
