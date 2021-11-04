@@ -2,7 +2,7 @@ import axiosClient from './axiosClient';
 
 const registerApi = {
   register: (data) => {
-    const url = 'api/user/signIn';
+    const url = 'event/save';
     return axiosClient.post(url, data);
   },
   getAll: () => {

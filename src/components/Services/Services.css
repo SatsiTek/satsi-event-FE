@@ -30,9 +30,9 @@
   text-align: justify;
   width: 22%;
 }
-/* .servicesContent h2 {
-  height: 60px;
-} */
+.servicesContent h2 {
+  font-size: 18px;
+}
 @media (max-width: 768px) {
   .contain {
     flex-direction: column;

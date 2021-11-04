@@ -32,7 +32,7 @@ const Services = () => {
             <div className='servicesContent'>
               <h2 className='test'>CHƯƠNG TRÌNH VISA 462</h2>
               <p>
-                Hàng năm có tới 1500 suất Visa 462 ((Work and Holiday) của chính
+                Hàng năm có tới 1500 suất Visa 462 (Work and Holiday) của chính
                 phủ Úc dành cho Việt Nam. Trong thời gian cư trú 12 tháng, bạn
                 có thể vừa tham gia các khóa học ngắn hạn, lao động hưởng lương,
                 du lịch khám phá trong và ngoài lãnh thổ nước Úc. Thời hạn cư

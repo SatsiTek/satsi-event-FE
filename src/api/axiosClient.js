@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // create an axios object with custom config
 const axiosClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL_TEST,
+  baseURL: process.env.REACT_APP_API_URL,
   headers: {
     'content-type': 'application/json',
   },

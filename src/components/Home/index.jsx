@@ -43,21 +43,18 @@ const Home = React.forwardRef((props, ref) => {
     };
   }, [props]);
   const { id } = props;
-  React.useEffect(() => {
-    const getAll = async () => {
-      const res = await fetch('http://123.16.53.43:8899/event/all');
-      console.log(res);
-    };
-    getAll();
-  });
+  // React.useEffect(() => {
+  //   const getAll = async () => {
+  //     const res = await fetch('http://123.16.53.43:8899/event/all');
+  //     console.log(res);
+  //   };
+  //   getAll();
+  // });
 
   const handleFormSubmit = async (data) => {
     try {
       console.log(data);
-      const res = await registerApi.register({
-        username: '123@gmail.com',
-        password: '111111',
-      });
+      const res = await registerApi.register(data);
       setSuccess(true);
       setDisableBtn(true);
       setTimeout(() => {
@@ -208,7 +205,7 @@ const Home = React.forwardRef((props, ref) => {
                     {errors.birthDay.message}
                   </span>
                 )}
-                <input
+                {/* <input
                   autoComplete='off'
                   {...register('address', {
                     required: 'vui lòng nhập trường này',
@@ -220,7 +217,7 @@ const Home = React.forwardRef((props, ref) => {
                 />
                 {errors.address && (
                   <span className='errorMessage'>{errors.address.message}</span>
-                )}
+                )} */}
                 <input
                   autoComplete='off'
                   {...register('code')}
@@ -247,14 +244,14 @@ const Home = React.forwardRef((props, ref) => {
               </form>
               <img className='qrImg' src={qrImg} />
             </div>
-            <button
+            {/* <button
               type='button'
               class='btn  registerBtn'
               data-toggle='modal'
               data-target='#exampleModal'
             >
               đăng ký ngay
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

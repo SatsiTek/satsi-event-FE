@@ -4,7 +4,7 @@ function App() {
   return (
     <div className='App'>
       <Wrapper />
-      <div
+      {/* <div
         class='modal fade'
         id='exampleModal'
         tabindex='-1'
@@ -42,7 +42,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
