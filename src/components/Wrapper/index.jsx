@@ -7,10 +7,13 @@ import AboutUs from '../AboutUs';
 import Services from '../Services';
 import Projects from '../Projects/Projects';
 const eventArray = [
-  { href: 'hihi', icon: <ion-icon name='logo-angular'></ion-icon> },
-  { href: 'hiha', icon: <ion-icon name='logo-css3'></ion-icon> },
-  { href: 'hiho', icon: <ion-icon name='logo-octocat'></ion-icon> },
-  { href: 'hihafaf', icon: <ion-icon name='logo-github'></ion-icon> },
+  { href: 'Home', icon: <ion-icon name='logo-angular'></ion-icon> },
+  {
+    href: 'AboutUs',
+    icon: <ion-icon name='information-circle-outline'></ion-icon>,
+  },
+  { href: 'Services', icon: <ion-icon name='list-outline'></ion-icon> },
+  { href: 'Projects', icon: <ion-icon name='images-outline'></ion-icon> },
   // { href: 'concacon', icon: <ion-icon name='logo-javascript'></ion-icon> },
 ];
 

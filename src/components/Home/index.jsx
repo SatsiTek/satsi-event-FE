@@ -21,7 +21,6 @@ const Home = React.forwardRef((props, ref) => {
     mins: undefined,
     secs: undefined,
   });
-  console.log(errors);
   React.useEffect(() => {
     const { timeTillDate } = props;
     const compareDate = new Date(timeTillDate);
@@ -31,7 +30,7 @@ const Home = React.forwardRef((props, ref) => {
       const hours = Math.floor(totalSeconds / 3600) % 24;
       const mins = Math.floor(totalSeconds / 60) % 60;
       const secs = Math.floor(totalSeconds) % 60;
-      console.log(totalSeconds);
+      // console.log(totalSeconds);
       if (totalSeconds < 0) {
         clearInterval(a);
         alert('Het thoi gian su kien');
@@ -44,14 +43,21 @@ const Home = React.forwardRef((props, ref) => {
     };
   }, [props]);
   const { id } = props;
+  React.useEffect(() => {
+    const getAll = async () => {
+      const res = await fetch('http://123.16.53.43:8899/event/all');
+      console.log(res);
+    };
+    getAll();
+  });
 
-  // const handleChangeInput = (e) => {
-  //   setRegisterInfo({ ...registerInfo, [e.target.name]: e.target.value });
-  // };
-  // console.log(registerInfo);
   const handleFormSubmit = async (data) => {
     try {
-      const res = await registerApi.register(data);
+      console.log(data);
+      const res = await registerApi.register({
+        username: '123@gmail.com',
+        password: '111111',
+      });
       setSuccess(true);
       setDisableBtn(true);
       setTimeout(() => {
@@ -60,7 +66,6 @@ const Home = React.forwardRef((props, ref) => {
         reset();
       }, 2000);
       console.log(res);
-      console.log(data);
     } catch (error) {
       setFailure(true);
       setTimeout(() => {
@@ -115,10 +120,12 @@ const Home = React.forwardRef((props, ref) => {
                 <header class='title'>
                   <img className='logo' src={logo} />
                   <span class='anim-wrapper'>
-                    <h2>
-                      SATSI - VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG
-                      NGHỆ CAO
-                    </h2>
+                    <h2>SATSI </h2>
+                    <h3>
+                      {' '}
+                      VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ
+                      CAO
+                    </h3>
                   </span>
                   <span class='anim-wrapper'>
                     <h3>Hội thảo du học Úc</h3>
@@ -139,6 +146,7 @@ const Home = React.forwardRef((props, ref) => {
             <div className='registerForm'>
               <form className='form' onSubmit={handleSubmit(handleFormSubmit)}>
                 <input
+                  autoComplete='off'
                   {...register('name', {
                     required: 'vui lòng nhập trường này',
                   })}
@@ -152,6 +160,7 @@ const Home = React.forwardRef((props, ref) => {
                   <span className='errorMessage'>{errors.name.message}</span>
                 )}
                 <input
+                  autoComplete='off'
                   {...register('phone', {
                     required: 'vui lòng nhập trường này',
                     pattern: {
@@ -168,6 +177,7 @@ const Home = React.forwardRef((props, ref) => {
                   <span className='errorMessage'>{errors.phone.message}</span>
                 )}
                 <input
+                  autoCompleted='off'
                   {...register('email', {
                     required: 'vui lòng nhập trường này',
                     pattern: {
@@ -184,6 +194,7 @@ const Home = React.forwardRef((props, ref) => {
                   <span className='errorMessage'>{errors.email.message}</span>
                 )}
                 <input
+                  autoComplete='off'
                   {...register('birthDay', {
                     required: 'vui lòng nhập trường này',
                   })}
@@ -198,6 +209,7 @@ const Home = React.forwardRef((props, ref) => {
                   </span>
                 )}
                 <input
+                  autoComplete='off'
                   {...register('address', {
                     required: 'vui lòng nhập trường này',
                   })}
@@ -210,6 +222,7 @@ const Home = React.forwardRef((props, ref) => {
                   <span className='errorMessage'>{errors.address.message}</span>
                 )}
                 <input
+                  autoComplete='off'
                   {...register('code')}
                   placeholder='Mã người giới thiệu'
                   className='formInput'
@@ -234,6 +247,14 @@ const Home = React.forwardRef((props, ref) => {
               </form>
               <img className='qrImg' src={qrImg} />
             </div>
+            <button
+              type='button'
+              class='btn  registerBtn'
+              data-toggle='modal'
+              data-target='#exampleModal'
+            >
+              đăng ký ngay
+            </button>
           </div>
         </div>
       </div>

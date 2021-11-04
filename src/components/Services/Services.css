@@ -27,8 +27,12 @@
   flex-wrap: wrap;
 }
 .servicesContent {
+  text-align: justify;
   width: 22%;
 }
+/* .servicesContent h2 {
+  height: 60px;
+} */
 @media (max-width: 768px) {
   .contain {
     flex-direction: column;

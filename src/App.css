@@ -4,7 +4,7 @@
   /* margin: 0; */
 }
 html {
-  font-family: sans-serif;
+  font-family: Roboto Condensed;
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;

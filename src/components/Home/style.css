@@ -110,14 +110,14 @@
   height: 40px;
   width: 100%;
   margin-top: 15px;
-  border-radius: 5px;
+
   padding: 8px;
 }
 .invalidFormInput {
   height: 40px;
   width: 100%;
   margin-top: 15px;
-  border-radius: 5px;
+
   border: orange 2px solid;
   padding: 8px;
 }
@@ -179,6 +179,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
   display: flex;
   gap: 30px;
 }
+/* .modal {
+  z-index: 4;
+} */
 @media (max-width: 1024px) {
   /* .qrImg {
     display: none;
