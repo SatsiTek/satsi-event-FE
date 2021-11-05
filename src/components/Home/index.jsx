@@ -3,8 +3,9 @@ import './style.css';
 import registerApi from '../../api/registerApi';
 import { useForm } from 'react-hook-form';
 import logo from '../../asset/logo-satsi.png';
-import qrImg from '../../asset/qr-img.jpg';
-
+import qrImg from '../../asset/qr-img2.jpg';
+import girlImg from '../../asset/girl.png';
+import cohoi from '../../asset/cohoi.png';
 const Home = React.forwardRef((props, ref) => {
   const {
     register,
@@ -102,9 +103,25 @@ const Home = React.forwardRef((props, ref) => {
               </div>
             </div>
           </div>
-
-          <div class='subTitle'>
-            <p>Hội thảo du học Úc</p>
+          <div className='homeLeftContent'>
+            <h3>Hội thảo du học Úc</h3>
+            {/* <p>
+              Du học Úc là lựa chọn lý tưởng của sinh viên quốc tế bởi chất
+              lượng đào tạo xuất sắc, nguồn học bổng dồi dào cùng môi trường
+              sống an toàn thân thiện.
+            </p> */}
+            <img className='qrImg' src={qrImg} />
+            <div>
+              {' '}
+              <button
+                type='button'
+                class='btn  registerBtn'
+                data-bs-toggle='modal'
+                data-bs-target='#exampleModal'
+              >
+                đăng ký ngay
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -116,38 +133,32 @@ const Home = React.forwardRef((props, ref) => {
               <div class='t-wrapper'>
                 <header class='title'>
                   <img className='logo' src={logo} />
-                  <span class='anim-wrapper'>
-                    <h2>SATSI </h2>
-                    <h3>
-                      {' '}
-                      VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ
-                      CAO
-                    </h3>
-                  </span>
-                  <span class='anim-wrapper'>
-                    <h3>Hội thảo du học Úc</h3>
-                  </span>
+
+                  <h3 className='compName'>
+                    VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ CAO
+                  </h3>
+                  <div className='banner d-flex '>
+                    <div>
+                      <h1 className='duhoc'>DU HỌC</h1>
+                      <h1 className='uc'>ÚC</h1>
+                      <img src={cohoi} className='cohoi' />
+                      <h1 className='hocbong'>nhận học bổng 100%</h1>
+                    </div>
+                    <div>
+                      <img src={girlImg} className='girlImg ' />
+                    </div>
+                  </div>
                 </header>
-                <div class='desc'>
-                  <span class='anim-wrapper'>
-                    <p>
-                      Du học Úc là lựa chọn lý tưởng của sinh viên quốc tế bởi
-                      chất lượng đào tạo xuất sắc, nguồn học bổng dồi dào cùng
-                      môi trường sống an toàn thân thiện.
-                    </p>
-                  </span>
-                </div>
               </div>
             </div>
 
-            <div className='registerForm'>
+            {/* <div className='registerForm'>
               <form className='form' onSubmit={handleSubmit(handleFormSubmit)}>
                 <input
                   autoComplete='off'
                   {...register('name', {
                     required: 'vui lòng nhập trường này',
                   })}
-                  // onChange={handleChangeInput}
                   placeholder='Họ tên'
                   name='name'
                   className={errors.name ? 'invalidFormInput' : 'formInput'}
@@ -165,7 +176,6 @@ const Home = React.forwardRef((props, ref) => {
                       message: 'nhập đúng số điện thoại',
                     },
                   })}
-                  // onChange={handleChangeInput}
                   placeholder='Số điện thoại'
                   className={errors.phone ? 'invalidFormInput' : 'formInput'}
                   type='tel'
@@ -182,7 +192,6 @@ const Home = React.forwardRef((props, ref) => {
                       message: 'nhập đúng email của bạn',
                     },
                   })}
-                  // onChange={handleChangeInput}
                   placeholder='Email'
                   className={errors.email ? 'invalidFormInput' : 'formInput'}
                   type='text'
@@ -192,32 +201,17 @@ const Home = React.forwardRef((props, ref) => {
                 )}
                 <input
                   autoComplete='off'
-                  {...register('birthDay', {
+                  {...register('birth', {
                     required: 'vui lòng nhập trường này',
                   })}
-                  // onChange={handleChangeInput}
                   placeholder='Ngày sinh'
-                  className={errors.birthDay ? 'invalidFormInput' : 'formInput'}
+                  className={errors.birth ? 'invalidFormInput' : 'formInput'}
                   type='date'
                 />
-                {errors.birthDay && (
-                  <span className='errorMessage'>
-                    {errors.birthDay.message}
-                  </span>
+                {errors.birth && (
+                  <span className='errorMessage'>{errors.birth.message}</span>
                 )}
-                {/* <input
-                  autoComplete='off'
-                  {...register('address', {
-                    required: 'vui lòng nhập trường này',
-                  })}
-                  placeholder='Địa chỉ'
-                  className={errors.address ? 'invalidFormInput' : 'formInput'}
-                  type='text'
-                  // onChange={handleChangeInput}
-                />
-                {errors.address && (
-                  <span className='errorMessage'>{errors.address.message}</span>
-                )} */}
+
                 <input
                   autoComplete='off'
                   {...register('code')}
@@ -232,7 +226,7 @@ const Home = React.forwardRef((props, ref) => {
                 {failure && (
                   <div className='notiFailure'> đăng ký không thành công</div>
                 )}
-                <div class=' buttonContain'>
+                <div class='buttonContain'>
                   <button
                     disabled={disabledBtn}
                     type='submit'
@@ -242,16 +236,8 @@ const Home = React.forwardRef((props, ref) => {
                   </button>
                 </div>
               </form>
-              <img className='qrImg' src={qrImg} />
-            </div>
-            {/* <button
-              type='button'
-              class='btn  registerBtn'
-              data-toggle='modal'
-              data-target='#exampleModal'
-            >
-              đăng ký ngay
-            </button> */}
+             
+            </div> */}
           </div>
         </div>
       </div>
