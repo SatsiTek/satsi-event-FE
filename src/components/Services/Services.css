@@ -1,7 +1,29 @@
+.text-justify {
+  text-align: justify;
+}
+.lydo {
+  margin-bottom: 25px;
+}
+.icon-check {
+  display: inline-block;
+  margin-right: 10px;
+  /* margin-bottom: -5px; */
+  color: red;
+  font-size: medium;
+}
+.test {
+  height: 45px;
+  margin: 10px 0;
+  font-weight: 500;
+}
 .contain {
   display: flex;
   padding-top: 50px;
   height: 100vh;
+}
+.servicesRightContent h1  {
+  font-weight: 500;
+  font-size: 50px;
 }
 .leftColumn {
   color: #fff;
@@ -26,9 +48,26 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
+.justify {
+  text-align: justify;
+}
+
+.image-service {
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
 .servicesContent {
   text-align: justify;
   width: 22%;
+}
+.buttonContain {
+  margin-top: -30px;
+}
+
+#morebtn1, #morebtn2, #morebtn3, #morebtn4 {
+  display: none;
 }
 .servicesContent h2 {
   font-size: 18px;
@@ -64,6 +103,13 @@
   }
   .services {
     gap: 0;
+  }
+  .lydo {
+    margin: 20px 0;
+  }
+  .test {
+    margin-top: 40px;
+    margin-bottom: -10px;
   }
   .servicesRightContent h1 {
     margin-bottom: 10px;

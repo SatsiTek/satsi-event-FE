@@ -9,6 +9,9 @@
     width: 100%;
   }
 }
+.text-justify {
+  text-align: justify;
+}
 .contain {
   display: flex;
 }

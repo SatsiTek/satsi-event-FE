@@ -7,14 +7,13 @@ import AboutUs from '../AboutUs';
 import Services from '../Services';
 import Projects from '../Projects/Projects';
 const eventArray = [
-  { href: 'Home', icon: <ion-icon name='logo-angular'></ion-icon> },
+  { href: 'Home', icon: <ion-icon name="time-outline"></ion-icon> },
   {
     href: 'AboutUs',
     icon: <ion-icon name='information-circle-outline'></ion-icon>,
   },
   { href: 'Services', icon: <ion-icon name='list-outline'></ion-icon> },
-  { href: 'Projects', icon: <ion-icon name='images-outline'></ion-icon> },
-  // { href: 'concacon', icon: <ion-icon name='logo-javascript'></ion-icon> },
+  { href: 'Projects', icon: <ion-icon name="accessibility-outline"></ion-icon> },
 ];
 
 const Wrapper = () => {

@@ -5,40 +5,40 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import img1 from '../../asset/img-sample1.jpg';
-import img2 from '../../asset/img-sample2.jpg';
-import img3 from '../../asset/img-sample3.jpg';
-import img4 from '../../asset/img-sample4.jpg';
+import img1 from '../../asset/slide1.jpg';
+import img2 from '../../asset/slide2.jpg';
+import img3 from '../../asset/slide3.jpg';
+import img4 from '../../asset/slide4.jpg';
 
 const SLIDES = [
   {
     img: img1,
     category: 'Category / Website',
-    title: 'Entertainment',
-    content: ` SATSi hỗ trợ, định hướng săn học bổng uy tín TOP đầu Việt Nam với tỉ lệ trúng visa lên tới 98%`,
+    title: 'SATSi – Đơn vị đồng hành săn học bổng du học Úc toàn phần hàng đầu',
+    content: `Viện Đào tạo khởi nghiệp và Ứng dụng KHCN cao - SATSi được cấp phép bởi Bộ Khoa học và Công nghệ. Thành lập bởi đội ngũ chuyên gia hàng đầu trong lĩnh vực hướng nghiệp - khởi nghiệp, SATSi mang tâm thế trở thành người bạn đồng hành, cùng thế hệ trẻ Việt chinh phục ước mơ du học Úc với sự chân thành và tinh thần trách nhiệm.`,
   },
   {
     img: img2,
     category: `
     Photo / Instagram`,
-    title: 'Last Exploration',
-    content: ` Đồng hành sát sao các bạn du học sinh tại Việt Nam và Úc`,
+    title: 'Tỉ lệ đạt Visa lên tới 98%',
+    content: `SATSi hỗ trợ, định hướng săn học bổng uy tín TOP đầu Việt Nam với tỉ lệ trúng visa lên tới 98%`,
   },
   {
     img: img3,
     category: `
   Arts / Painting`,
-    title: 'Painting',
+    title: 'Đồng hành sát sao các bạn du học sinh tại Việt Nam và Úc',
     content:
-      'Đào tạo tiếng Anh (PTE, TOEIC, IELTS) chuyên nghiệp, đảm bảo đầu ra giúp tiết kiệm chi phí, thời gian',
+      'Với chi nhánh tại Úc và các văn phòng đại diện trên khắp Việt Nam sẽ giúp chúng tôi dễ dàng giữ liên lạc với sinh viên và gia đình trong suốt quá trình học tập đồng thời chia sẻ nhiều thông tin về việc làm và định cư ở nước ngoài',
   },
   {
     img: img4,
     category: `
   Photo / Instagram`,
-    title: 'Macro Lens',
+    title: 'Đảm bảo trình độ ngoại ngữ của học viên trước khi  du học',
     content:
-      'Cam kết cung cấp dịch vụ chất lượng, tư vấn trách nhiệm và nhân văn. SATSi đặt lợi ích và quyền lợi của khách hàng lên hàng đầu',
+      'Đào tạo tiếng Anh (PTE, TOEIC, IELTS) chuyên nghiệp, đảm bảo đầu ra giúp tiết kiệm chi phí, thời gian',
   },
 ];
 SwiperCore.use([Navigation, Pagination]);
@@ -53,11 +53,18 @@ const Projects = () => {
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-            <ion-icon name='images-outline'></ion-icon>
+          <ion-icon name="accessibility-outline"></ion-icon>
           </div>
           <h2>Hoạt động</h2>
-          <p>Just a few sample among our huge amount of projects.</p>
-          <button className='registerBtn'>Register</button>
+          <p>SĂN HỌC BỔNG TOÀN PHẦN Ở ÚC</p>
+          <button
+            type='button'
+            class='btn  registerBtn'
+            data-bs-toggle='modal'
+            data-bs-target='#exampleModal'
+          >
+            đăng ký ngay
+          </button>
         </div>
       </div>
       <div className='rightColumn'>
@@ -87,9 +94,9 @@ const Projects = () => {
               <SwiperSlide key={index}>
                 <div>
                   <img className='slideImage' src={slide.img} alt='' />
-                  <p className='slideCategory'>{slide.category}</p>
+                  {/* <p className='slideCategory'>{slide.category}</p> */}
                   <h2 className='slideTitle'>{slide.title} </h2>
-                  <p>{slide.content}</p>
+                  <p className='slideContent'>{slide.content}</p>
                 </div>
               </SwiperSlide>
             ))}

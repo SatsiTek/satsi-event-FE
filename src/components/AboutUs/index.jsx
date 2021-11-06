@@ -9,24 +9,31 @@ const AboutUs = () => {
             <ion-icon name='information-circle-outline'></ion-icon>
           </div>
           <h2>DỊCH VỤ CUNG CẤP</h2>
-          <p>
+          <p className='text-justify'>
             Tuyển sinh du học cao đẳng nghề tại CHLB Đức. Tuyển sinh du học các
             cấp tại Úc.
           </p>
-          <p>
+          <p className='text-justify'>
             Hướng nghiệp - đào tạo kỹ năng - đào tạo khởi nghiệp. Tuyển sinh -
             đào tạo và cung ứng nhân lực ngành hàng không. Nghiên cứu ứng dụng
             giải pháp công nghệ - trí tuệ nhân tạo. Ứng dụng khoa học công nghệ
             trong giáo dục và đào tạo.
           </p>
-          <button className='registerBtn'>Register</button>
+          <button
+            type='button'
+            class='btn  registerBtn'
+            data-bs-toggle='modal'
+            data-bs-target='#exampleModal'
+          >
+            đăng ký ngay
+          </button>
         </div>
       </div>
       <div className='rightColumn'>
         <div className='rightContent'>
           <h1>GIỚI THIỆU CHUNG</h1>
           <h2>Thông tin về chúng tôi</h2>
-          <p>
+          <p className='text-justify'>
             Viện đào tạo khởi nghiệp và ứng dụng khoa học công nghệ ( gọi tắt là
             SATSi) quyết định thành lập từ ngày 13/07/2020, hoạt động theo mô
             hình tổ chức doanh nghiệp, thành lập bởi các giáo sư, tiến sĩ giàu
@@ -34,7 +41,7 @@ const AboutUs = () => {
             hội… là một trong những tổ chức hàng đầu ứng dụng khoa học công
             nghệ, kỹ thuật tiên tiến trong giáo dục, đào tạo, khởi nghiệp.
           </p>
-          <p>
+          <p className='text-justify'>
             SATSi là đối tác của rất nhiều trung tâm giáo dục và đào tạo, đại
             học, cao đẳng uy tín trong và ngoài nước. Với sứ mệnh không ngừng
             đổi mới sáng tạo, ứng dụng khoa học công nghệ bắt kịp xu thế thời
@@ -49,7 +56,7 @@ const AboutUs = () => {
             thể NĂNG ĐỘNG, TRẺ TRUNG, TỐC ĐỘ, CHUYÊN NGHIỆP, HIỆN ĐẠI
           </p>
           <div className='buttonContain'>
-            <button className='registerBtn'>Services</button>
+            {/* <button className='registerBtn'>Services</button> */}
           </div>
         </div>
       </div>

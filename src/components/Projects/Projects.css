@@ -6,6 +6,7 @@
 .slideImage {
   width: 360px;
   height: auto;
+  border-radius: 8px;
 }
 .slideRightContent {
   max-width: 100%;
@@ -63,9 +64,23 @@
   transition: 0.3s all;
 }
 .slideTitle {
-  color: #4ca6ff;
+  text-transform: uppercase;
+  margin: 20px 0;
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #d18111,
+    1px -1px 0 #d18111,
+    -1px 1px 0 #d18111,
+    1px 1px 0 #d18111;  
+}
+.slideContent {
+  display: block;
+  margin: 0 40px 0 0;
 }
 @media (max-width: 768px) {
+  .icon-section {
+    margin: 20px;
+  }
   .projectsContain {
     flex-direction: column;
     padding-top: 0;

@@ -80,8 +80,9 @@ const Home = React.forwardRef((props, ref) => {
         {' '}
         <div class='clock-wrapper'>
           <div className='icon-section'>
-            <ion-icon name='logo-angular'></ion-icon>
+            <ion-icon name="time-outline"></ion-icon>
           </div>
+          <h2 className='title-dangky'>Đăng ký tham gia hội thảo</h2>
           <div class='clock-hms clearfix'>
             <div class='tile tile-days'>
               <span class='days digit'>{time.days}</span>
@@ -112,7 +113,6 @@ const Home = React.forwardRef((props, ref) => {
             </p> */}
             <img className='qrImg' src={qrImg} />
             <div>
-              {' '}
               <button
                 type='button'
                 class='btn  registerBtn'
@@ -144,8 +144,8 @@ const Home = React.forwardRef((props, ref) => {
                       <img src={cohoi} className='cohoi' />
                       <h1 className='hocbong'>nhận học bổng 100%</h1>
                     </div>
-                    <div>
-                      <img src={girlImg} className='girlImg ' />
+                    <div className="girl-wrapper">
+                      <img src={girlImg} className='girlImg' />
                     </div>
                   </div>
                 </header>
