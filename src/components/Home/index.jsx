@@ -34,7 +34,7 @@ const Home = React.forwardRef((props, ref) => {
       // console.log(totalSeconds);
       if (totalSeconds < 0) {
         clearInterval(a);
-        alert('Het thoi gian su kien');
+        alert('Thời gian tham gia sự kiện đã hết!');
       } else {
         setTime({ days, hours, mins, secs });
       }
@@ -80,9 +80,9 @@ const Home = React.forwardRef((props, ref) => {
         {' '}
         <div class='clock-wrapper'>
           <div className='icon-section'>
-            <ion-icon name="time-outline"></ion-icon>
+            <ion-icon name='time-outline'></ion-icon>
           </div>
-          <h2 className='title-dangky'>Đăng ký tham gia hội thảo</h2>
+          <h2 className='title-dangky'>HỘI THẢO DU HỌC ÚC</h2>
           <div class='clock-hms clearfix'>
             <div class='tile tile-days'>
               <span class='days digit'>{time.days}</span>
@@ -105,12 +105,7 @@ const Home = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div className='homeLeftContent'>
-            <h3>Hội thảo du học Úc</h3>
-            {/* <p>
-              Du học Úc là lựa chọn lý tưởng của sinh viên quốc tế bởi chất
-              lượng đào tạo xuất sắc, nguồn học bổng dồi dào cùng môi trường
-              sống an toàn thân thiện.
-            </p> */}
+            <h3>ĐĂNG KÝ THAM GIA</h3>
             <img className='qrImg' src={qrImg} />
             <div>
               <button
@@ -119,7 +114,7 @@ const Home = React.forwardRef((props, ref) => {
                 data-bs-toggle='modal'
                 data-bs-target='#exampleModal'
               >
-                đăng ký ngay
+                Đăng ký ngay
               </button>
             </div>
           </div>
@@ -133,22 +128,21 @@ const Home = React.forwardRef((props, ref) => {
               <div class='t-wrapper'>
                 <header class='title'>
                   <img className='logo' src={logo} />
-
                   <h3 className='compName'>
                     VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ CAO
                   </h3>
-                  <div className='banner d-flex '>
-                    <div>
-                      <h1 className='duhoc'>DU HỌC</h1>
-                      <h1 className='uc'>ÚC</h1>
-                      <img src={cohoi} className='cohoi' />
-                      <h1 className='hocbong'>nhận học bổng 100%</h1>
-                    </div>
-                    <div className="girl-wrapper">
-                      <img src={girlImg} className='girlImg' />
-                    </div>
-                  </div>
                 </header>
+                <div className='banner  '>
+                  <div>
+                    <h1 className='duhoc'>DU HỌC</h1>
+                    <h1 className='uc'>ÚC</h1>
+                    <img src={cohoi} className='cohoi' />
+                    <h1 className='hocbong'>nhận học bổng 100%</h1>
+                  </div>
+                  <div className='girl-wrapper'>
+                    <img src={girlImg} className='girlImg' />
+                  </div>
+                </div>
               </div>
             </div>
 

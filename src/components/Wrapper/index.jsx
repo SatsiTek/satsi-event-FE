@@ -3,22 +3,27 @@ import Home from '../Home';
 import Sidebar from '../Sidebar';
 import './Wrapper.css';
 import _ from 'lodash';
+import Voucher from '../Voucher';
 import AboutUs from '../AboutUs';
 import Services from '../Services';
 import Projects from '../Projects/Projects';
 const eventArray = [
-  { href: 'Home', icon: <ion-icon name="time-outline"></ion-icon> },
+  { href: 'Home', icon: <ion-icon name='time-outline'></ion-icon> },
+  { href: 'Voucher', icon: <ion-icon name='gift-outline'></ion-icon> },
   {
     href: 'AboutUs',
     icon: <ion-icon name='information-circle-outline'></ion-icon>,
   },
   { href: 'Services', icon: <ion-icon name='list-outline'></ion-icon> },
-  { href: 'Projects', icon: <ion-icon name="accessibility-outline"></ion-icon> },
+  {
+    href: 'Projects',
+    icon: <ion-icon name='accessibility-outline'></ion-icon>,
+  },
 ];
 
 const Wrapper = () => {
   const [position, setPosition] = React.useState(0);
-  const length = 4;
+  const length = 5;
   const wrapperEls = React.useRef([]);
   const updatePosition = _.debounce((val) => {
     setPosition(val);
@@ -73,21 +78,28 @@ const Wrapper = () => {
         </div>
 
         <div
-          className={position === 1 ? 'aboutUs active' : 'aboutUs'}
+          className={position === 1 ? 'voucher active' : 'voucher'}
           ref={(el) => (wrapperEls.current[1] = el)}
+        >
+          <Voucher />
+        </div>
+
+        <div
+          className={position === 2 ? 'aboutUs active' : 'aboutUs'}
+          ref={(el) => (wrapperEls.current[2] = el)}
         >
           <AboutUs />
         </div>
 
         <div
-          className={position === 2 ? 'services active' : 'services'}
-          ref={(el) => (wrapperEls.current[2] = el)}
+          className={position === 3 ? 'services active' : 'services'}
+          ref={(el) => (wrapperEls.current[3] = el)}
         >
           <Services />
         </div>
         <div
-          className={position === 3 ? 'projects active' : 'projects'}
-          ref={(el) => (wrapperEls.current[3] = el)}
+          className={position === 4 ? 'projects active' : 'projects'}
+          ref={(el) => (wrapperEls.current[4] = el)}
         >
           <Projects />
         </div>

@@ -91,7 +91,7 @@ li {
 }
 .main-menu ul li a ion-icon:hover,
 .main-menu ul li.active a ion-icon {
-  color: #4ca6ff;
+  color: rgb(218, 96, 51);
 }
 @media (max-width: 768px) {
   #fp-nav-wrapper {

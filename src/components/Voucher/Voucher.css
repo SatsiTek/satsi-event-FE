@@ -1,0 +1,162 @@
+.text-justify {
+  text-align: justify;
+}
+
+.lydo {
+  margin-bottom: 25px;
+}
+
+.icon-check {
+  display: inline-block;
+  margin-right: 10px;
+  /* margin-bottom: -5px; */
+  color: red;
+  font-size: medium;
+}
+
+.test {
+  height: 45px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.contain {
+  display: flex;
+  padding-top: 50px;
+  height: 100vh;
+}
+
+.servicesRightContent h1 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.leftColumn {
+  color: #fff;
+  width: 25%;
+  border-right: 1px solid #fff;
+}
+
+.rightColumn {
+  color: #fff;
+  width: 75%;
+}
+
+.leftContent {
+  color: #fff;
+  margin: 60px 20px;
+}
+
+.servicesRightContent1 {
+  max-width: 100%;
+  margin: 100px 30px;
+}
+
+.services {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* .image-service {
+  width: 100px;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 8px;
+} */
+
+.image-voucher {
+  width: 100%;
+}
+
+.servicesContent {
+  text-align: justify;
+  width: 22%;
+}
+
+.buttonContain {
+  margin-top: -30px;
+}
+
+#morebtn1,
+#morebtn2,
+#morebtn3,
+#morebtn4 {
+  display: none;
+}
+
+.servicesContent h2 {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .contain {
+    flex-direction: column;
+    padding-top: 0;
+    height: auto;
+  }
+  .rightColumn {
+    width: 100%;
+  }
+  .leftColumn {
+    width: 100%;
+  }
+  .voucher .servicesContent {
+    width: 49%;
+  }
+  .servicesContent h2 {
+    font-weight: 400;
+  }
+  .leftContent {
+    margin: 0;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .rightContent {
+    text-align: center;
+    margin: 20px 10px;
+    max-width: unset;
+  }
+  .voucher .services {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .lydo {
+    margin: 20px 0;
+  }
+  .test {
+    margin-top: 40px;
+    margin-bottom: -10px;
+  }
+  .servicesRightContent h1 {
+    margin-bottom: 10px;
+  }
+  .servicesRightContent {
+    margin: 20px 10px;
+    text-align: center;
+  }
+  .leftContent h2,
+  .rightContent h2,
+  .rightContent h1,
+  .rightContent p,
+  .rightContent h3,
+  .leftContent p,
+  .servicesContent {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .voucher .servicesContent {
+    width: 100%;
+  }
+  .services {
+    gap: 20;
+  }
+}

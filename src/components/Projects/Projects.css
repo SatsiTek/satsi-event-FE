@@ -67,11 +67,8 @@
   text-transform: uppercase;
   margin: 20px 0;
   color: #fff;
-  text-shadow:
-    -1px -1px 0 #d18111,
-    1px -1px 0 #d18111,
-    -1px 1px 0 #d18111,
-    1px 1px 0 #d18111;  
+  text-shadow: -1px -1px 0 #d18111, 1px -1px 0 #d18111, -1px 1px 0 #d18111,
+    1px 1px 0 #d18111;
 }
 .slideContent {
   display: block;
@@ -98,6 +95,9 @@
     width: 80%;
     margin: 0px auto;
     max-height: 500px;
+  }
+  .slideContent {
+    margin: 0;
   }
 }
 @media (max-width: 480px) {
