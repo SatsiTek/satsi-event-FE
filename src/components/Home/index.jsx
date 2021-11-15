@@ -1,27 +1,20 @@
 import React from 'react';
 import './style.css';
-import registerApi from '../../api/registerApi';
-import { useForm } from 'react-hook-form';
+import moment from 'moment';
+import 'moment/locale/vi';
 import logo from '../../asset/logo-satsi.png';
 import qrImg from '../../asset/qr-img2.jpg';
 import girlImg from '../../asset/girl.png';
 import cohoi from '../../asset/cohoi.png';
 const Home = React.forwardRef((props, ref) => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-  const [success, setSuccess] = React.useState(false);
-  const [failure, setFailure] = React.useState(false);
-  const [disabledBtn, setDisableBtn] = React.useState(false);
   const [time, setTime] = React.useState({
     days: undefined,
     hours: undefined,
     mins: undefined,
     secs: undefined,
   });
+  const [hours, setHours] = React.useState();
+  const [day, setDay] = React.useState();
   React.useEffect(() => {
     const { timeTillDate } = props;
     const compareDate = new Date(timeTillDate);
@@ -34,7 +27,6 @@ const Home = React.forwardRef((props, ref) => {
       // console.log(totalSeconds);
       if (totalSeconds < 0) {
         clearInterval(a);
-        alert('Thời gian tham gia sự kiện đã hết!');
       } else {
         setTime({ days, hours, mins, secs });
       }
@@ -43,67 +35,54 @@ const Home = React.forwardRef((props, ref) => {
       clearInterval(a);
     };
   }, [props]);
+  console.log(time);
   const { id } = props;
-  // React.useEffect(() => {
-  //   const getAll = async () => {
-  //     const res = await fetch('http://123.16.53.43:8899/event/all');
-  //     console.log(res);
-  //   };
-  //   getAll();
-  // });
-
-  const handleFormSubmit = async (data) => {
-    try {
-      console.log(data);
-      const res = await registerApi.register(data);
-      setSuccess(true);
-      setDisableBtn(true);
-      setTimeout(() => {
-        setSuccess(false);
-        setDisableBtn(false);
-        reset();
-      }, 2000);
-      console.log(res);
-    } catch (error) {
-      setFailure(true);
-      setTimeout(() => {
-        setFailure(false);
-        // reset();
-      }, 2000);
-
-      console.log(error);
-    }
-  };
+  React.useEffect(() => {
+    const clockTime = setInterval(() => {
+      setHours(moment(new Date()).format('LTS'));
+      setDay(moment(new Date()).format('LL'));
+    }, 1000);
+    return () => {
+      clearInterval(clockTime);
+    };
+  });
+  console.log(moment(new Date()).format('LLLL'));
   return (
     <div className='home' ref={ref} id={id}>
       <div className='leftColumn'>
-        {' '}
         <div class='clock-wrapper'>
           <div className='icon-section'>
             <ion-icon name='time-outline'></ion-icon>
           </div>
           <h2 className='title-dangky'>HỘI THẢO DU HỌC ÚC</h2>
-          <div class='clock-hms clearfix'>
-            <div class='tile tile-days'>
-              <span class='days digit'>{time.days}</span>
-              <span class='txt'>days</span>
-            </div>
+          {time.secs ? (
+            <div class='clock-hms clearfix'>
+              <div class='tile tile-days'>
+                <span class='days digit'>{time.days}</span>
+                <span class='txt'>days</span>
+              </div>
 
-            <div class='secondary'>
-              <div class='tile tile-hours'>
-                <span class='hours digit'>{`0${time.hours}`.slice(-2)}</span>
-                <span class='txt'>hours</span>
-              </div>
-              <div class='tile tile-minutes'>
-                <span class='minutes digit'>{`0${time.mins}`.slice(-2)}</span>
-                <span class='txt'>mins</span>
-              </div>
-              <div class='tile tile-seconds'>
-                <span class='seconds digit'>{`0${time.secs}`.slice(-2)}</span>
-                <span class='txt'>secs</span>
+              <div class='secondary'>
+                <div class='tile tile-hours'>
+                  <span class='hours digit'>{`0${time.hours}`.slice(-2)}</span>
+                  <span class='txt'>hours</span>
+                </div>
+                <div class='tile tile-minutes'>
+                  <span class='minutes digit'>{`0${time.mins}`.slice(-2)}</span>
+                  <span class='txt'>mins</span>
+                </div>
+                <div class='tile tile-seconds'>
+                  <span class='seconds digit'>{`0${time.secs}`.slice(-2)}</span>
+                  <span class='txt'>secs</span>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div>
+              <h3>{day}</h3>
+              <h1 className='hours'>{hours}</h1>
+            </div>
+          )}
           <div className='homeLeftContent'>
             <h3>ĐĂNG KÝ THAM GIA</h3>
             <img className='qrImg' src={qrImg} />

@@ -268,7 +268,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .homeLeftContent h3 {
   margin-bottom: 20px;
 }
-
+.hours {
+  color: #18ff1f;
+}
 @media (max-width: 1024px) {
   /* .qrImg {
     display: none;
