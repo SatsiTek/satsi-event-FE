@@ -3,9 +3,10 @@ import './style.css';
 import moment from 'moment';
 import 'moment/locale/vi';
 import logo from '../../asset/logo-satsi.png';
-import qrImg from '../../asset/qr-img2.jpg';
+import qrImg from '../../asset/satsi-qr.jpg';
 import girlImg from '../../asset/girl.png';
 import cohoi from '../../asset/cohoi.png';
+import tdhnImg from '../../asset/tdhn1.png';
 const Home = React.forwardRef((props, ref) => {
   const [time, setTime] = React.useState({
     days: undefined,
@@ -35,7 +36,7 @@ const Home = React.forwardRef((props, ref) => {
       clearInterval(a);
     };
   }, [props]);
-  console.log(time);
+
   const { id } = props;
   React.useEffect(() => {
     const clockTime = setInterval(() => {
@@ -46,7 +47,7 @@ const Home = React.forwardRef((props, ref) => {
       clearInterval(clockTime);
     };
   });
-  console.log(moment(new Date()).format('LLLL'));
+
   return (
     <div className='home' ref={ref} id={id}>
       <div className='leftColumn'>
@@ -54,7 +55,7 @@ const Home = React.forwardRef((props, ref) => {
           <div className='icon-section'>
             <ion-icon name='time-outline'></ion-icon>
           </div>
-          <h2 className='title-dangky'>HỘI THẢO DU HỌC ÚC</h2>
+          <h2 className='title-dangky'>TƯ VẤN DU HỌC ÚC</h2>
           {time.secs ? (
             <div class='clock-hms clearfix'>
               <div class='tile tile-days'>
@@ -79,7 +80,7 @@ const Home = React.forwardRef((props, ref) => {
             </div>
           ) : (
             <div>
-              <h3>{day}</h3>
+              <h3 className='day'>{day}</h3>
               <h1 className='hours'>{hours}</h1>
             </div>
           )}
@@ -107,6 +108,7 @@ const Home = React.forwardRef((props, ref) => {
               <div class='t-wrapper'>
                 <header class='title'>
                   <img className='logo' src={logo} />
+                  <img className='tdhnImg' src={tdhnImg} alt='' />
                   <h3 className='compName'>
                     VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ CAO
                   </h3>
