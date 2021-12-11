@@ -143,7 +143,7 @@ const RegisterModal = () => {
                   placeholder='Mã người giới thiệu'
                   {...register('code')}
                   type='text'
-                  value='TDHN'
+                  value='01CSSHN'
                   className='form-control '
                   // disabled
                 />
