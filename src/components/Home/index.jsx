@@ -101,14 +101,13 @@ const Home = React.forwardRef((props, ref) => {
         </div>
       </div>
       <div className='rightColumn'>
-        {' '}
         <div className='main-content'>
           <div className='content-wrapper'>
             <div class='title-desc'>
               <div class='t-wrapper'>
                 <header class='title'>
                   <img className='logo' src={logo} />
-                  <img className='tdhnImg' src={tdhnImg} alt='' />
+                  {/* <img className='tdhnImg' src={tdhnImg} /> */}
                   <h3 className='compName'>
                     VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ CAO
                   </h3>

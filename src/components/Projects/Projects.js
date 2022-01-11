@@ -1,59 +1,38 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Projects.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import img1 from '../../asset/slide1.jpg';
-import img2 from '../../asset/slide2.jpg';
-import img3 from '../../asset/slide3.jpg';
-import img4 from '../../asset/slide4.jpg';
+import configApi from '../../api/configApi';
 
-const SLIDES = [
-  {
-    img: img1,
-    category: 'Category / Website',
-    title: 'SATSi – Đơn vị đồng hành săn học bổng du học Úc toàn phần hàng đầu',
-    content: `Viện Đào tạo khởi nghiệp và Ứng dụng KHCN cao - SATSi được cấp phép bởi Bộ Khoa học và Công nghệ. Thành lập bởi đội ngũ chuyên gia hàng đầu trong lĩnh vực hướng nghiệp - khởi nghiệp, SATSi mang tâm thế trở thành người bạn đồng hành, cùng thế hệ trẻ Việt chinh phục ước mơ du học Úc với sự chân thành và tinh thần trách nhiệm.`,
-  },
-  {
-    img: img2,
-    category: `
-    Photo / Instagram`,
-    title: 'Tỉ lệ đạt Visa lên tới 98%',
-    content: `SATSi hỗ trợ, định hướng săn học bổng uy tín TOP đầu Việt Nam với tỉ lệ trúng visa lên tới 98%`,
-  },
-  {
-    img: img3,
-    category: `
-  Arts / Painting`,
-    title: 'Đồng hành sát sao các bạn du học sinh tại Việt Nam và Úc',
-    content:
-      'Với chi nhánh tại Úc và các văn phòng đại diện trên khắp Việt Nam sẽ giúp chúng tôi dễ dàng giữ liên lạc với sinh viên và gia đình trong suốt quá trình học tập đồng thời chia sẻ nhiều thông tin về việc làm và định cư ở nước ngoài',
-  },
-  {
-    img: img4,
-    category: `
-  Photo / Instagram`,
-    title: 'Đảm bảo trình độ ngoại ngữ của học viên trước khi  du học',
-    content:
-      'Đào tạo tiếng Anh (PTE, TOEIC, IELTS) chuyên nghiệp, đảm bảo đầu ra giúp tiết kiệm chi phí, thời gian',
-  },
-];
 SwiperCore.use([Navigation, Pagination]);
 
 const Projects = () => {
+  const [configs, setConfigs] = useState([]);
   const prevRef = useRef();
   const nextRef = useRef();
   const swiperRef = useRef(null);
   console.log(prevRef.current, nextRef.current);
+  useEffect(() => {
+    const fetchConfig = async () => {
+      const res = await configApi.getConfig({
+        type: 'images',
+        page: 'du-hoc-uc',
+        section: 'activities',
+      });
+      console.log(res);
+      setConfigs(res.data[0].images);
+    };
+    fetchConfig();
+  }, []);
   return (
     <div className='projectsContain'>
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-          <ion-icon name="accessibility-outline"></ion-icon>
+            <ion-icon name='accessibility-outline'></ion-icon>
           </div>
           <h2>Hoạt động</h2>
           <p>SĂN HỌC BỔNG TOÀN PHẦN Ở ÚC</p>
@@ -90,13 +69,17 @@ const Projects = () => {
             pagination={{ clickable: true }}
             loop={true}
           >
-            {SLIDES.map((slide, index) => (
+            {configs.map((config, index) => (
               <SwiperSlide key={index}>
                 <div>
-                  <img className='slideImage' src={slide.img} alt='' />
+                  <img
+                    className='slideImage'
+                    src={`${process.env.REACT_APP_API_URL_TEST}${config.link}`}
+                    alt=''
+                  />
                   {/* <p className='slideCategory'>{slide.category}</p> */}
-                  <h2 className='slideTitle'>{slide.title} </h2>
-                  <p className='slideContent'>{slide.content}</p>
+                  <h2 className='slideTitle'>{config.data} </h2>
+                  <p className='slideContent'>{config.description}</p>
                 </div>
               </SwiperSlide>
             ))}
