@@ -6,7 +6,7 @@ import configApi from '../../api/configApi';
 const Voucher = () => {
   const [configs, setConfigs] = useState([]);
   const [readMore, setReadMore] = useState([]);
-  
+
   useEffect(() => {
     const mapElements = document.querySelectorAll('.image-service');
     mapElements.forEach((mapElement) => {
@@ -48,7 +48,7 @@ const Voucher = () => {
               <div className='servicesContent'>
                 <h2 className='test'>{config.data}</h2>
                 <img
-                  src={`${process.env.REACT_APP_API_URL_TEST}${config.link}`}
+                  src={`${process.env.REACT_APP_API_URL}${config.link}`}
                   alt='Chương trình visa 426'
                   className='image-voucher'
                 />

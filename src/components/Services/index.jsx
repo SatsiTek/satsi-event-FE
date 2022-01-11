@@ -59,7 +59,7 @@ const Services = () => {
                 <div className='servicesContent'>
                   <h2 className='test'>{config.data}</h2>
                   <img
-                    src={`${process.env.REACT_APP_API_URL_TEST}${config.link}`}
+                    src={`${process.env.REACT_APP_API_URL}${config.link}`}
                     alt='Chương trình visa 426'
                     className='image-service'
                   />

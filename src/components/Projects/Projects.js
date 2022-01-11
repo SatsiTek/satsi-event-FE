@@ -74,7 +74,7 @@ const Projects = () => {
                 <div>
                   <img
                     className='slideImage'
-                    src={`${process.env.REACT_APP_API_URL_TEST}${config.link}`}
+                    src={`${process.env.REACT_APP_API_URL}${config.link}`}
                     alt=''
                   />
                   {/* <p className='slideCategory'>{slide.category}</p> */}
