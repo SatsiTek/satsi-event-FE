@@ -1,33 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.61e9f1ef.chunk.css",
-    "main.js": "/static/js/main.290b8692.chunk.js",
-    "main.js.map": "/static/js/main.290b8692.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7226168c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7226168c.js.map",
+    "main.css": "/static/css/main.79a785d6.chunk.css",
+    "main.js": "/static/js/main.91c5e507.chunk.js",
+    "main.js.map": "/static/js/main.91c5e507.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.61e781b0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.61e781b0.js.map",
     "static/css/2.2f3494ae.chunk.css": "/static/css/2.2f3494ae.chunk.css",
-    "static/js/2.6c7c3801.chunk.js": "/static/js/2.6c7c3801.chunk.js",
-    "static/js/2.6c7c3801.chunk.js.map": "/static/js/2.6c7c3801.chunk.js.map",
-    "static/js/3.28dda741.chunk.js": "/static/js/3.28dda741.chunk.js",
-    "static/js/3.28dda741.chunk.js.map": "/static/js/3.28dda741.chunk.js.map",
+    "static/js/2.6414a610.chunk.js": "/static/js/2.6414a610.chunk.js",
+    "static/js/2.6414a610.chunk.js.map": "/static/js/2.6414a610.chunk.js.map",
+    "static/js/3.d19c1c41.chunk.js": "/static/js/3.d19c1c41.chunk.js",
+    "static/js/3.d19c1c41.chunk.js.map": "/static/js/3.d19c1c41.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.2f3494ae.chunk.css.map": "/static/css/2.2f3494ae.chunk.css.map",
-    "static/css/main.61e9f1ef.chunk.css.map": "/static/css/main.61e9f1ef.chunk.css.map",
-    "static/js/2.6c7c3801.chunk.js.LICENSE.txt": "/static/js/2.6c7c3801.chunk.js.LICENSE.txt",
+    "static/css/main.79a785d6.chunk.css.map": "/static/css/main.79a785d6.chunk.css.map",
+    "static/js/2.6414a610.chunk.js.LICENSE.txt": "/static/js/2.6414a610.chunk.js.LICENSE.txt",
     "static/media/Wrapper.css": "/static/media/12.99d4c390.jpg",
     "static/media/cohoi.25464a62.png": "/static/media/cohoi.25464a62.png",
     "static/media/girl.f555ae65.png": "/static/media/girl.f555ae65.png",
     "static/media/logo-satsi.438e9f92.png": "/static/media/logo-satsi.438e9f92.png",
     "static/media/qr-img2.4f4a253e.jpg": "/static/media/qr-img2.4f4a253e.jpg",
     "static/media/satsi-qr.eb94e832.jpg": "/static/media/satsi-qr.eb94e832.jpg",
-    "static/media/satsi_profile.92e6ff8d.jpg": "/static/media/satsi_profile.92e6ff8d.jpg",
-    "static/media/tdhn1.1b4197e8.png": "/static/media/tdhn1.1b4197e8.png"
+    "static/media/satsi_profile.92e6ff8d.jpg": "/static/media/satsi_profile.92e6ff8d.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7226168c.js",
+    "static/js/runtime-main.61e781b0.js",
     "static/css/2.2f3494ae.chunk.css",
-    "static/js/2.6c7c3801.chunk.js",
-    "static/css/main.61e9f1ef.chunk.css",
-    "static/js/main.290b8692.chunk.js"
+    "static/js/2.6414a610.chunk.js",
+    "static/css/main.79a785d6.chunk.css",
+    "static/js/main.91c5e507.chunk.js"
   ]
 }
