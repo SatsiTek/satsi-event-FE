@@ -6,7 +6,17 @@ import logo from '../../asset/logo-satsi.png';
 import qrImg from '../../asset/satsi-qr.jpg';
 import girlImg from '../../asset/girl.png';
 import cohoi from '../../asset/cohoi.png';
-import tdhnImg from '../../asset/tdhn1.png';
+import configApi from '../../api/configApi';
+
+const ICONS_ARRAY = [
+  <ion-icon name='location-outline'></ion-icon>,
+  <ion-icon name='call-outline'></ion-icon>,
+  <ion-icon name='call-outline'></ion-icon>,
+  <ion-icon name='mail-outline'></ion-icon>,
+  <ion-icon name='logo-facebook'></ion-icon>,
+  <ion-icon name='globe-outline'></ion-icon>,
+];
+
 const Home = React.forwardRef((props, ref) => {
   const [time, setTime] = React.useState({
     days: undefined,
@@ -14,6 +24,7 @@ const Home = React.forwardRef((props, ref) => {
     mins: undefined,
     secs: undefined,
   });
+  const [configs, setConfigs] = React.useState([]);
   const [hours, setHours] = React.useState();
   const [day, setDay] = React.useState();
   React.useEffect(() => {
@@ -47,13 +58,29 @@ const Home = React.forwardRef((props, ref) => {
       clearInterval(clockTime);
     };
   });
-
+  React.useEffect(() => {
+    const fetchConfigs = async () => {
+      const res = await configApi.getConfig({
+        type: 'text',
+        page: 'footer',
+        section: 'footer',
+      });
+      console.log(res);
+      const newArray = res.data.map((item, index) => {
+        return { ...item, icon: ICONS_ARRAY[index] };
+      });
+      setConfigs(newArray);
+    };
+    fetchConfigs();
+  }, []);
   return (
     <div className='home' ref={ref} id={id}>
       <div className='leftColumn'>
         <div class='clock-wrapper'>
           <div className='icon-section'>
-            <ion-icon name='time-outline'></ion-icon>
+            <a className='linkIcon' href='https://satsi.edu.vn' target='_blank'>
+              <ion-icon name='time-outline'></ion-icon>
+            </a>
           </div>
           <h2 className='title-dangky'>TƯ VẤN DU HỌC ÚC</h2>
           {time.secs ? (
@@ -90,7 +117,7 @@ const Home = React.forwardRef((props, ref) => {
             <div>
               <button
                 type='button'
-                class='btn  registerBtn'
+                class='btn  registerBtnNew'
                 data-bs-toggle='modal'
                 data-bs-target='#exampleModal'
               >
@@ -111,7 +138,16 @@ const Home = React.forwardRef((props, ref) => {
                   <h3 className='compName'>
                     VIỆN ĐÀO TẠO KHỞI NGHIỆP VÀ ỨNG DỤNG KHOA HỌC CÔNG NGHỆ CAO
                   </h3>
+                  <ul className='contactList'>
+                    {configs.map((config) => (
+                      <li>
+                        {config.icon}
+                        <span> {config.value}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </header>
+
                 <div className='banner  '>
                   <div>
                     <h1 className='duhoc'>DU HỌC</h1>

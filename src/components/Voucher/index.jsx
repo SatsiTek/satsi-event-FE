@@ -31,7 +31,9 @@ const Voucher = () => {
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-            <ion-icon name='gift-outline'></ion-icon>
+            <a className='linkIcon' href='https://satsi.edu.vn' target='_blank'>
+              <ion-icon name='gift-outline'></ion-icon>
+            </a>
           </div>
           <h2 className='lydo'>DU HỌC ÚC</h2>
           <p>CHƯƠNG TRÌNH HỌC ĐA DẠNG</p>

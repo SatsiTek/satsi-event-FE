@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Projects.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import configApi from '../../api/configApi';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Projects = () => {
   const [configs, setConfigs] = useState([]);
@@ -32,13 +32,15 @@ const Projects = () => {
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-            <ion-icon name='accessibility-outline'></ion-icon>
+            <a className='linkIcon' href='https://satsi.edu.vn' target='_blank'>
+              <ion-icon name='accessibility-outline'></ion-icon>
+            </a>
           </div>
           <h2>Hoạt động</h2>
           <p>SĂN HỌC BỔNG TOÀN PHẦN Ở ÚC</p>
           <button
             type='button'
-            class='btn  registerBtn'
+            class='btn  registerBtnNew'
             data-bs-toggle='modal'
             data-bs-target='#exampleModal'
           >
@@ -68,6 +70,8 @@ const Projects = () => {
             slidesPerView={1}
             pagination={{ clickable: true }}
             loop={true}
+            autoplay={{ delay: 2000 }}
+            speed={1000}
           >
             {configs.map((config, index) => (
               <SwiperSlide key={index}>

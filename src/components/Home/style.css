@@ -99,7 +99,7 @@
 
 .title {
   position: relative;
-  margin-bottom: 75vh;
+  margin-bottom: 40vh;
 }
 
 .title-dangky {
@@ -277,6 +277,23 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .hours {
   color: #18ff1f;
 }
+.contactList li {
+  margin-top: 10px;
+  font-size: 22px;
+}
+.contactList {
+  margin-top: 30px;
+  padding-left: 0px;
+}
+.contactList li span {
+  margin-left: 10px;
+}
+.linkIcon {
+  color: #fff;
+}
+.linkIcon:hover {
+  color: rgb(218, 96, 51);
+}
 @media (max-width: 1024px) {
   /* .qrImg {
     display: none;
@@ -420,6 +437,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
   .main-content {
     margin: 20px 10px;
     justify-content: center;
+  }
+  .contactList {
+    text-align: start;
   }
 }
 

@@ -30,7 +30,9 @@ const AboutUs = () => {
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-            <ion-icon name='information-circle-outline'></ion-icon>
+            <a className='linkIcon' href='https://satsi.edu.vn' target='_blank'>
+              <ion-icon name='information-circle-outline'></ion-icon>
+            </a>
           </div>
           <h2>THÔNG TIN VỀ SATSI</h2>
           <p className='text-justify'>{aboutUsLeft?.value}</p>
@@ -40,7 +42,7 @@ const AboutUs = () => {
 
           <button
             type='button'
-            class='btn  registerBtn'
+            class='btn  registerBtnNew'
             data-bs-toggle='modal'
             data-bs-target='#exampleModal'
           >

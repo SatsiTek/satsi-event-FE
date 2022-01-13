@@ -37,7 +37,9 @@ const Services = () => {
       <div className='leftColumn'>
         <div className='leftContent'>
           <div className='icon-section'>
-            <ion-icon name='list-outline'></ion-icon>
+            <a className='linkIcon' href='https://satsi.edu.vn' target='_blank'>
+              <ion-icon name='list-outline'></ion-icon>
+            </a>
           </div>
           <h2 className='lydo'>Lý do nên chọn du học Úc</h2>
           {whyChooseUs.map((item) => (
