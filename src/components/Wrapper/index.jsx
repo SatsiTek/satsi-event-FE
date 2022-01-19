@@ -7,6 +7,7 @@ import Voucher from '../Voucher';
 import AboutUs from '../AboutUs';
 import Services from '../Services';
 import Projects from '../Projects/Projects';
+import Videos from '../Videos/Videos';
 const eventArray = [
   { href: 'Home', icon: <ion-icon name='time-outline'></ion-icon> },
   { href: 'Voucher', icon: <ion-icon name='gift-outline'></ion-icon> },
@@ -19,11 +20,15 @@ const eventArray = [
     href: 'Projects',
     icon: <ion-icon name='accessibility-outline'></ion-icon>,
   },
+  {
+    href: 'Videos',
+    icon: <ion-icon name='videocam-outline'></ion-icon>,
+  },
 ];
 
 const Wrapper = () => {
   const [position, setPosition] = React.useState(0);
-  const length = 5;
+  const length = 6;
   const wrapperEls = React.useRef([]);
   const updatePosition = _.debounce((val) => {
     setPosition(val);
@@ -102,6 +107,12 @@ const Wrapper = () => {
           ref={(el) => (wrapperEls.current[4] = el)}
         >
           <Projects />
+        </div>
+        <div
+          className={position === 5 ? 'projects active' : 'projects'}
+          ref={(el) => (wrapperEls.current[5] = el)}
+        >
+          <Videos />
         </div>
         <Sidebar
           position={position}
