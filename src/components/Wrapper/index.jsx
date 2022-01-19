@@ -74,6 +74,7 @@ const Wrapper = () => {
   return (
     <React.Fragment>
       <div className='wrapper'>
+       
         <div className={position === 0 ? 'homeContain active' : 'homeContain'}>
           <Home
             ref={(el) => (wrapperEls.current[0] = el)}

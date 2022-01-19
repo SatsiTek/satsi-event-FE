@@ -1,10 +1,19 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 const Sidebar = ({ position, eventArray, handleClick }) => {
   return (
     <React.Fragment>
-      <div id="fp-nav-wrapper">
-        <div id="fp-nav" class="right" style={{ marginTop: "-56px" }}>
+      <div id='fp-nav-wrapper'>
+        <div id='fp-nav' class='right' style={{ marginTop: '-56px' }}>
+          <div className='iconSideBar'>
+            <a
+              className='linkIcon'
+              href='https://satsi.edu.vn/du-hoc-uc'
+              target='_blank'
+            >
+              <ion-icon name='rocket-outline'></ion-icon>{' '}
+            </a>
+          </div>
           <ul>
             {eventArray.map((event, index) => {
               return (
@@ -12,7 +21,7 @@ const Sidebar = ({ position, eventArray, handleClick }) => {
                   <a
                     href={`#${event.href}`}
                     onClick={() => handleClick(index)}
-                    class={position === index ? "active" : ""}
+                    class={position === index ? 'active' : ''}
                   >
                     <span></span>
                   </a>
@@ -23,11 +32,11 @@ const Sidebar = ({ position, eventArray, handleClick }) => {
         </div>
       </div>
 
-      <nav class="main-menu">
-        <ul class="links" id="qmenu">
+      <nav class='main-menu'>
+        <ul class='links' id='qmenu'>
           {eventArray.map((event, index) => {
             return (
-              <li class={position === index ? "active" : ""}>
+              <li class={position === index ? 'active' : ''}>
                 <a href={`#${event.href}`} onClick={() => handleClick(index)}>
                   {event.icon}
                 </a>
